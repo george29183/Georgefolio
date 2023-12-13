@@ -1,0 +1,55 @@
+import React,{useState} from 'react'
+import logo from "../assets/george_black.svg"
+import IcBaselineMenu from './IcBaselineMenu'
+import RadixIconsCross1 from './RadixIconsCross1'
+import MaterialSymbolsKeyboardArrowDown from './MaterialSymbolsKeyboardArrowDown'
+import MaterialSymbolsKeyboardArrowUp from './MaterialSymbolsKeyboardArrowUp'
+import Aside from './aside'
+import Over from './over'
+import { Link } from 'react-router-dom'
+
+
+export default function Navbar(){
+  const [menu,setmenu] = useState(true)
+  const [path,setPath] = useState('home')
+ const [over,setOver] = useState(false)
+  
+  return (
+    <nav onMouseLeave={()=>{setOver(false)}} className='select-none  sticky top-0 z-50 items-center flex justify-between pr-4 navv h-16 '>
+     <Link to='/' ><div className='flex selection:bg-none relative items-center'>
+        <img
+      onClick={()=>{setPath('home')}}
+    alt='logo'
+    className='w-20  mt-3 h-24'
+    src={logo}
+    />
+    <h1 className='text-2xl -gap-2 absolute left-16 text-black'>EORGE</h1>
+      </div></Link>
+      
+    <div className='hidden text-slate-900 lg:text-xl lg:block'>
+     <ul className='flex gap-4 justify-around'>
+          <Link to='/about'><li className=' cursor-pointer transition hover:scale-105'>About</li></Link>
+          <li onMouseOver={()=>{setOver(true); setPath('projects')}} 
+          className='relative  flex items-center cursor-pointer transition hover:scale-105'>
+            Projects
+            {over && path === 'projects' ?<MaterialSymbolsKeyboardArrowUp/>:<MaterialSymbolsKeyboardArrowDown/>}
+            {over && path === 'projects'?<Over value={path}/>:null}
+            </li>
+            <li onMouseOver={()=>{setOver(true); setPath('skills')}} 
+          className='relative  flex items-center cursor-pointer transition hover:scale-105'>
+            Skills
+            {over && path === 'skills'?<MaterialSymbolsKeyboardArrowUp/>:<MaterialSymbolsKeyboardArrowDown/>}
+            {over && path === 'skills'?<Over value={path}/>:null}
+            </li>
+         <Link to='/contact'><li className=' cursor-pointer transition hover:scale-105'>Contact</li></Link>
+          
+     </ul>
+    </div>
+    <div className='lg:hidden' onClick={()=>{setmenu(!menu)}}>
+          {menu ?<IcBaselineMenu/>:<RadixIconsCross1/>}
+        </div>
+        {menu?null:<Aside/>}
+        
+    </nav>
+  )
+}
