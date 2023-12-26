@@ -16,11 +16,21 @@ import Github from './components/-skills/github'
 import Contact from './pages/contact'
 import About from './pages/about'
 import Home from './pages/home'
+import Ecommerce from './components/-projects/own/components/ecommerce/ecommerce'
+import Blog from './components/-projects/own/components/blog/blog'
+import EcomContextProvider from './components/-projects/own/components/context/ecomContext'
+
+import Product from './components/-projects/own/components/ecommerce/product'
+import Cart from './components/-projects/own/components/ecommerce/cart'
+import Producty from './components/-projects/own/components/ecommerce/producty'
+import OwnContact from './components/-projects/own/components/ecommerce/contact'
+import LandingPage from './components/-projects/own/components/Landing-Page/LandingPage'
 
 function App() {
 
   return (
     <div>
+      <EcomContextProvider>
     <BrowserRouter>
     <Navbar/>
     <Routes>
@@ -28,6 +38,17 @@ function App() {
       <Route path='/about' element={<About/>}></Route>
       <Route path='/project'>
         <Route path='/project/OWN' element={<OWN/>}></Route>
+        <Route path='/project/OWN/E-commerce' element={<Ecommerce/>}></Route>
+        <Route path='/project/OWN/E-commerce/products' element={<Product/>}>
+        </Route>
+        <Route path='/project/OWN/E-commerce/product' element={<Producty/>}>
+          <Route path=':productId' element={<Producty/>}/>
+        </Route>
+        <Route path='/project/OWN/E-commerce/contact' element={<OwnContact/>}>
+        </Route>
+        <Route path='/project/OWN/E-commerce/cart' element={<Cart/>}></Route>
+          <Route path='/project/OWN/Blog' element={<Blog/>}></Route>
+          <Route path='/project/OWN/Landing-Page' element={<LandingPage/>}></Route>
         <Route path='/project/clones' element={<Clones/>}></Route>
         <Route path="/project/API's" element={<APIs/>}></Route>
         <Route path='/project/when-bored' element={<Bored/>}></Route>
@@ -44,6 +65,7 @@ function App() {
     </Routes>
    
     </BrowserRouter>
+    </EcomContextProvider>
     </div>
   )
 }
