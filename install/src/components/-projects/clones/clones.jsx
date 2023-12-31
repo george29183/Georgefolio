@@ -1,8 +1,13 @@
 import React from 'react'
+import ClonesNav from './components/clonesNav/ClonesNav'
+import ClonesHero from './components/clonesHero/ClonesHero'
 
 export default function Clones(){
   return (
-    <div>clones</div>
+    <section>
+      <ClonesNav/>
+      <ClonesHero/>
+    </section>
   )
 }
 

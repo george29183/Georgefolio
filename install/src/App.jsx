@@ -25,11 +25,13 @@ import Cart from './components/-projects/own/components/ecommerce/cart'
 import Producty from './components/-projects/own/components/ecommerce/producty'
 import OwnContact from './components/-projects/own/components/ecommerce/contact'
 import LandingPage from './components/-projects/own/components/Landing-Page/LandingPage'
+import Youtube from './components/-projects/clones/components/youtube/Youtube'
+
 
 function App() {
 
   return (
-    <div>
+    <div className=''>
       <EcomContextProvider>
     <BrowserRouter>
     <Navbar/>
@@ -50,6 +52,7 @@ function App() {
           <Route path='/project/OWN/Blog' element={<Blog/>}></Route>
           <Route path='/project/OWN/Landing-Page' element={<LandingPage/>}></Route>
         <Route path='/project/clones' element={<Clones/>}></Route>
+        <Route path='/project/clones/Youtube' element={<Youtube/>}></Route>
         <Route path="/project/API's" element={<APIs/>}></Route>
         <Route path='/project/when-bored' element={<Bored/>}></Route>
         <Route path='/project/custom' element={<Custom/>}></Route>
