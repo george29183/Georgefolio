@@ -7,6 +7,7 @@ const EcomContextProvider = (props)=>{
     const [cart,addCart] = useState([])
     const [quan,setQuan] = useState(null)
     const [showPopup, setShowPopup] = useState(false);
+    const [aside,setAside] = useState(false)
 
     const showPopups = () => {
       setShowPopup(true);
@@ -68,7 +69,7 @@ const EcomContextProvider = (props)=>{
       }
      
 
-    const contextValue = {cartItem,allProducts,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete}
+    const contextValue = {cartItem,allProducts,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside}
     return(
         <Ecomcontext.Provider value={contextValue}>
             {props.children}
