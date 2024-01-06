@@ -24,7 +24,13 @@
   ::-webkit-scrollbar-track {
     background-color: #212121; /* Set the color of the scrollbar track */
   }
-  
+
+  @media (max-width: 767px) {
+    ::-webkit-scrollbar {
+      width: 0px;
+      height:0px; /* Set the width of the scrollbar */
+    }
+  }
   .navv{
     background: rgba(15,23,42,0.90);
 -webkit-backdrop-filter: blur(17px);

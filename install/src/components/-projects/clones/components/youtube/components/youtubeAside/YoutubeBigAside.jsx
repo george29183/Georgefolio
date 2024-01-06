@@ -4,6 +4,7 @@ import MaterialSymbolsLightSubscriptionsOutlineSharp from './MaterialSymbolsLigh
 import MaterialSymbolsLightVideoLibrarySharp from './MaterialSymbolsLightVideoLibrarySharp'
 import OcticonHistory24 from './OcticonHistory24'
 import SimpleIconsYoutubeshorts from './SimpleIconsYoutubeshorts'
+import { useLayoutEffect } from 'react'
 import MaterialSymbolsLightHomeOutline from './MaterialSymbolsLightHomeOutline'
 import MaterialSymbolsLightSubscriptionsSharp from './MaterialSymbolsLightSubscriptionsSharp'
 import PhUserCircleThin from '../assets/PhUserCircleThin'
@@ -20,12 +21,21 @@ function YoutubeBigAside() {
         gaming:false,
         sports:false
       })
+      const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
   return (
-    <div className='sticky  z-30 overflow-hidden hover:overflow-y-auto left-0 flex gap-1 flex-col  text-xs items-center  text-slate-50  bg-[#0F0F0F] py-4 px-2 w-64 top-[122px]'>
+    <div className={`sticky  overflow-hidden hover:overflow-y-auto left-0 flex gap-1 flex-col  text-xs h-[80vh] items-center text-slate-50  bg-[#0F0F0F] py-2 px-2 w-64 top-32`}>
         <button onClick={()=>{setIcon({
           icon:false,
           home:true
-        })}} className='flex hover:bg-[#303030] cursor-pointer w-full py-2 px-4 transition rounded-lg  gap-4 items-center'>
+        })}} className='flex hover:bg-[#303030] cursor-pointer w-full py-2 px-[18px] transition rounded-lg  gap-5 items-center'>
          {icon.home?<MaterialSymbolsHome/>:<MaterialSymbolsLightHomeOutline/>}
         <h2 className=' text-base font-semibold'>Home</h2>
       </button>
@@ -43,7 +53,7 @@ function YoutubeBigAside() {
          {icon.subscriptions?<MaterialSymbolsLightSubscriptionsSharp/>:<MaterialSymbolsLightSubscriptionsOutlineSharp/>}
         <h2 className='text-base font-semibold'>Subscriptions</h2>
       </button>
-      <hr className='w-[240px] opacity-30'/>
+      <hr className='w-full opacity-30'/>
       <button onClick={()=>{setIcon({
           icon:false,
           you:true
@@ -61,7 +71,7 @@ function YoutubeBigAside() {
       <hr className='w-[240px] opacity-30'/>
       <div className='my-3 px-2 flex flex-col'>
         <h2 className='text-base'>Sign in to like videos, comment, and subscribe</h2>
-        <button  className='flex w-28 items-center gap-1 py-1 px-3 rounded-full border hover:bg-opacity-[0.3] text-base font-semibold mt-2 hover:bg-blue-400  border-[#303030]  text-[#49b3ff]'><PhUserCircleThin/> Sign in</button>
+        <button  className='flex w-28 items-center gap-1 py-1 px-3 rounded-full border hover:bg-opacity-[0.3] text-base font-semibold mt-2 hover:bg-blue-400  border-[#303030]  text-[#49b3ff]'><PhUserCircleThin fill="#4CA0F1"/> Sign in</button>
       </div>
       <hr className=' opacity-30 w-[240px]'/>
       <div className='self-start flex gap-1 flex-col justify-center mt-2 text-xs w-56'>
@@ -110,6 +120,9 @@ function YoutubeBigAside() {
         <h2 className='text-base font-bold'>Browse Channels</h2>
       </button>
       <hr className='w-[240px] opacity-30'/>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi voluptates laudantium distinctio qui et eaque necessitatibus rem tenetur, quod, praesentium perferendis nihil magni voluptatibus hic corporis error consectetur, quis molestiae.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis unde ut rem voluptatum, cum quis possimus blanditiis, voluptas mollitia dolores sunt dolore delectus nam. Eius culpa exercitationem illo cumque voluptate!
+      </p>
     </div>
     
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 export function OcticonHistory24(props) {
   return (
-    <svg  xmlns="http://www.w3.org/2000/svg" width="2.2em" height="2.2em" viewBox="0 0 24 24" {...props}><path style={{
+    <svg  xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" {...props}><path style={{
       stroke: props.stroke,
       strokeWidth:props.strokeWidth,
       strokeLinejoin:"round"

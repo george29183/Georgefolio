@@ -15,7 +15,7 @@ function YoutubeSmallAside() {
     history:false,
   })
   return (
-    <div className='sticky w-[78px]  left-0 flex  flex-col  text-xs text-slate-50  bg-[#0F0F0F] py-4 top-[122px]'>
+    <div className='sticky w-[78px] left-0 flex  flex-col  text-xs text-slate-50  bg-[#0F0F0F] py-1 top-32'>
       <button onClick={()=>{setIcon({
           icon:false,
           home:true

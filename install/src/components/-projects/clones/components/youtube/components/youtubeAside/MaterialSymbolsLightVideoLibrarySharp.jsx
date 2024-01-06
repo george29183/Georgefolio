@@ -2,7 +2,7 @@ import React from 'react'
 
 export function MaterialSymbolsLightVideoLibrarySharp(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="2.2em" height="2.2em" viewBox="0 0 24 24" ><path style={{
+    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" ><path style={{
       fill: props.fill,
       stroke: props.stroke,
       strokeWidth: "1px",
