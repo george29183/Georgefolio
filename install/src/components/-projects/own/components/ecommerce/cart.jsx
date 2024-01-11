@@ -20,18 +20,18 @@ export default function Cart(){
       {
         cart.map((item,i)=>{
             if(item.quantity>0){
-                return ( <div key={item.id+i+item.name}>
+                return ( <div key={item.id}>
                 <div className="w-full h-[max-content]  mr-36 gap-24 flex justify-between">
                   <div className='relative basis-2/3 flex w-[240px] gap-2 h-[max-content]'>
-                    <img src={item.image} className='rounded-xl h-[200px]  w-[200px]'/>
+                    <img src={item.images[0]} className='rounded-xl h-[200px]  w-[200px]'/>
                     <div className='absolute bottom-0 left-0 p-1 gap-2 flex'>
                       <MdiMinusThick onClick={()=>{deleteItem(item)}}  className="p-2 bg-slate-200 rounded-lg hover:scale-105 active:scale-95 transition-all hover:bg-slate-400"/>
                       <MaterialSymbolsAddRounded onClick={()=>{addItem(item)}} className="p-2 bg-slate-200 rounded-lg hover:scale-105 active:scale-95 transition-all hover:bg-slate-400"/>
                     </div>
                     <div className='flex flex-col'>
-                    <p className='text-lg   p-1 text-bold'>{item.name}</p>
-                    <p className='text-xl p-1 line-through text-red-600'>${item.old_price}</p>
-                     <p className='text-xl p-1'>${item.new_price}</p>
+                    <p className='text-lg   p-1 text-bold'>{item.title}</p>
+                    <p className='text-xl p-1 line-through text-red-600'>${item.price}</p>
+                     <p className='text-xl p-1'>${Math.round(item.price-item.price*(item.discountPercentage/100))}</p>
                   </div>
                   </div>
                   

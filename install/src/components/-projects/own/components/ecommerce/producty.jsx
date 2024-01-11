@@ -6,14 +6,14 @@ import Nav from '../own-navbar/nav'
 import IconParkOutlineCheckCorrect from './components/assets/IconParkOutlineCheckCorrect'
 
 export default function Producty(){
-    const {allProducts,setCartItem,addCart,cart,quantity,showPopup,showPopups} = useContext(Ecomcontext)
+    const {all_Products,setCartItem,addCart,cart,quantity,showPopup,showPopups} = useContext(Ecomcontext)
     
   const {productId} = useParams()
-  const product = allProducts[productId-1]
+  const product = all_Products[productId-1]
   
   return (
     <>
-    <OwnNavbar path="Ecommerce" sec="products" thir={product.name}/>
+    <OwnNavbar path="Ecommerce" sec="products" thir={product.title}/>
     <Nav/>
     {showPopup && (
         <div className="sticky flex items-center transition-all lg:top-40 m-0 lg:absolute top-32 bg-slate-300 w-[50%] lg:left-[25%] mx-auto text-white z-[100] px-4 py-2 rounded-md shadow-md">
@@ -23,13 +23,13 @@ export default function Producty(){
    
     <div className='lg:flex'>
         <div>
-            <img className='rounded-b-xl' src={product.image} alt="" />
+            <img className='rounded-b-xl w-full' src={product.images[0]} alt="" />
         </div>
         <div className='flex flex-col items-center'>
-            <h1 className='text-center uppercase m-4 text-2xl text-bold'>{product.name}</h1>
+            <h1 className='text-center uppercase m-4 text-2xl text-bold'>{product.title}</h1>
             <p className='text-center text-slate-500'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint iure porro deleniti! Ut aspernatur reprehenderit dolor repellat quia eaque, nulla voluptatum provident fugit laudantium? Inventore molestiae magnam reprehenderit nam eaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, facilis. Assumenda sequi nobis quo quod, hic officia nulla praesentium laudantium deserunt velit maiores itaque excepturi. Ab accusamus eligendi error labore?</p>
-            <div className='text-4xl text m-4 text-center'>${product.new_price}</div>
-            <div className='text-4xl m-4 text-red-400 line-through text text-center'>${product.old_price}</div>
+            <div className='text-4xl text m-4 text-center'>${Math.round(product.price-product.price*(product.discountPercentage/100))}</div>
+            <div className='text-4xl m-4 text-red-400 line-through text text-center'>${product.price}</div>
             <button className='w-[80%]
      relative py-4 px-8 mt-12 text-black text-base font-bold
            rounded-lg overflow-hidden bg-slate-100 transition-all

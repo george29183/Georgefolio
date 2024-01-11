@@ -5,6 +5,8 @@
 
 @layer base {
   @import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Sevillana&display=swap');
+
   *{
     @apply p-0 m-0;
     -webkit-tap-highlight-color: transparent;
@@ -52,5 +54,7 @@ border: 1px solid rgba(255,255,255,0.125);
  .imgs{
   object-position: bottom center;
  }
-
+ .post{
+  font-family:Bilbo Swash Caps;
+ }
 }

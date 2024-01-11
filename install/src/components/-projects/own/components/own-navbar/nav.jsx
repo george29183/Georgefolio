@@ -11,7 +11,7 @@ export default function Nav(props){
    const {cartItem} = useContext(Ecomcontext)
   return (
     <div className='select-none z-30 sticky top-16 bg-slate-50 w-full h-16 py-4 gap-2 justify-between items-center p-3 flex'>
-    <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce"><h1 className='text-bold text-xl hover:scale-105 cursor-pointer'>My Shop</h1></Link>
+    <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce"><h1 className='text-bold text-xl hover:scale-105 cursor-pointer'>GeorgeFi</h1></Link>
     <ul className=' hidden lg:flex gap-8 xl:gap-12'>
         <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce"><li className='hover:scale-105 transition cursor-pointer '>Home</li></Link>
         <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/products"><li className='hover:scale-105 transition cursor-pointer '>Products</li></Link>

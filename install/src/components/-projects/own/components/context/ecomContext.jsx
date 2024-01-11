@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import allProducts from "../ecommerce/components/assets/allProduct";
+import all_Products from "../ecommerce/components/assets/allProduct";
 export const Ecomcontext = createContext(null)
 
 const EcomContextProvider = (props)=>{
@@ -38,14 +38,14 @@ const EcomContextProvider = (props)=>{
    return quan
 }
     const total = (item)=>{
-      return item.new_price*item.quantity
+      return Math.round(item.price-item.price*(item.discountPercentage/100))*item.quantity
     }
     
       const allTotal = ()=>{
         let totaly = 0
         cart.map(item=>{
           
-            return totaly += item.new_price*item.quantity
+            return totaly += Math.round(item.price-item.price*(item.discountPercentage/100))*item.quantity
         })
         if(totaly>0){
           return totaly
@@ -69,7 +69,7 @@ const EcomContextProvider = (props)=>{
       }
      
 
-    const contextValue = {cartItem,allProducts,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside}
+    const contextValue = {cartItem,all_Products,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside}
     return(
         <Ecomcontext.Provider value={contextValue}>
             {props.children}

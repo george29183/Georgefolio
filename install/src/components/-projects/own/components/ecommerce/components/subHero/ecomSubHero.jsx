@@ -1,5 +1,4 @@
 import React from 'react'
-import sale from '../assets/wepik-export-20231217150121Bn7e.png'
 import { Link } from 'react-router-dom'
 
 export default function EcomSubHero(){
@@ -12,7 +11,6 @@ export default function EcomSubHero(){
             <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/products"><button className='text-xl lg:text-2xl bg-slate-300 mt-4 rounded-xl py-2 px-6 text-slate-900 hover:scale-105 active:scale-95 hover:bg-red-700 hover:text-slate-50 transition'>Shop Now</button></Link>
         </div>
         <div className='basis-1/2 pt-8'>
-            <img src={sale} alt="" />
         </div>
         </div>
   )

@@ -7,7 +7,7 @@ export default function EcomProduct(){
     
     if(i>6 &&i<11){
      return(
-       <Link key={item.id+i+item.name} onClick={()=>{window.scrollTo(0,0)}} to={`/project/OWN/E-commerce/product/${item.id}`}> <div  className='group cursor-pointer mx-auto lg:w-full  w-[80%] items-center h-[max-content]  flex flex-col relative py-2 px-8 mt-12 text-black text-base font-bold
+       <Link key={item.id} onClick={()=>{window.scrollTo(0,0)}} to={`/project/OWN/E-commerce/product/${item.id}`}> <div  className='group cursor-pointer mx-auto lg:w-full  w-[80%] items-center h-[max-content]  flex flex-col relative py-2 px-8 mt-12 text-black text-base font-bold
         rounded-lg overflow-hidden transition-all
          duration-700 ease-in-out shadow-md xl:text-3xl lg:text-2xl hover:scale-105
           hover:shadow-lg  before:absolute before:top-0 
@@ -16,17 +16,17 @@ export default function EcomProduct(){
             before:duration-500 before:ease-in-out before:z-[-1] before:rounded-lg 
             hover:before:left-0'>
           <div className=' mx-auto w-full h-80 bg-slate-300 rounded-xl'>
-            <img className='h-full relative bg-cover w-full rounded-xl' src={item.image} />
+            <img className='h-full relative bg-cover w-full rounded-xl' src={item.images[0]} />
           </div>
             <div className='flex flex-col w-full'>
               <div className='flex justify-between px-2 w-full'>
-                <p className='text-lg text-slate-950'>{item.name}</p>
-              <div className='text-lg text-orange-700'>${item.new_price}
+                <p className='text-lg text-slate-950'>{item.title}</p>
+              <div className='text-lg text-orange-700'>${Math.round(item.price-item.price*(item.discountPercentage/100))}
               </div>
               </div>
               <div className='w-[100%] h-16 pl-5 text-xs text-slate-500 flex justify-between'>
-                <p className='w-[50%]'>{item.disc}</p>
-                <p className='text-xl pr-2 line-through'>${item.old_price}</p>
+                <p className='w-[50%]'>{item.description}</p>
+                <p className='text-xl pr-2 line-through'>${item.price}</p>
               </div>
               
             </div>

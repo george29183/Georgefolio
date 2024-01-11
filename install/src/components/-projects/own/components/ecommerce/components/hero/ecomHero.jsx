@@ -1,5 +1,4 @@
 import React from 'react'
-import store from '../assets/wepik-export-20231217135141SkEr.png'
 import { Link } from 'react-router-dom'
 export default function EcomHero(){
 
@@ -13,7 +12,7 @@ export default function EcomHero(){
            <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/products"> <button className='text-xl lg:text-2xl bg-slate-300 mt-4 rounded-xl py-2 px-6 text-slate-900 hover:scale-105 active:scale-95 hover:bg-slate-900 hover:text-slate-50 transition'>Explore</button></Link>
         </div>
         <div className='text-8xl text-center basis-1/2'>
-           <img className='' src={store} alt="" />
+          
         </div>
 
      </div>

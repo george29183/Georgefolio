@@ -34,8 +34,8 @@ function YoutubeMain() {
           </div>
           <div className='flex justify-between'>
           <div className='flex gap-2 '>
-           <div className=' w-9'>
-             <img className='rounded-[50%] mt-1 w-12' src={item.profilePic} alt={item.id} />
+           <div className=' w-12 h-12'>
+             <img className='rounded-[50%] mt-1 h-10 w-12' src={item.profilePic} alt={item.id} />
            </div>
            <div className='flex flex-col'>
              <h2 className='text-[16px] font-semibold font-sans'>{item.name}</h2>

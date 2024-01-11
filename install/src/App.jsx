@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './components/navbar/navbar'
-import Hero from './components/hero/hero'
 import {Routes,Route, BrowserRouter} from 'react-router-dom'
 
 import OWN from './components/-projects/own/own'
@@ -26,6 +25,8 @@ import Producty from './components/-projects/own/components/ecommerce/producty'
 import OwnContact from './components/-projects/own/components/ecommerce/contact'
 import LandingPage from './components/-projects/own/components/Landing-Page/LandingPage'
 import Youtube from './components/-projects/clones/components/youtube/Youtube'
+
+import NewsApi from './components/-projects/api\'s/components/newsApi/NewsApi'
 
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
         <Route path='/project/clones' element={<Clones/>}></Route>
         <Route path='/project/clones/Youtube' element={<Youtube/>}></Route>
         <Route path="/project/API's" element={<APIs/>}></Route>
+        <Route path="/project/API's/News" element={<NewsApi/>}></Route>
         <Route path='/project/when-bored' element={<Bored/>}></Route>
         <Route path='/project/custom' element={<Custom/>}></Route>
       </Route>

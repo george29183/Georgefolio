@@ -17,7 +17,7 @@ import vid16 from './4390641.jpg';
 import vid17 from './185289.jpg';
 import vid18 from './2076227.jpg';
 import vid19 from './1125701.jpg';
-import pic1 from './20230814_053148.jpg'
+import pic1 from './7162769.jpg'
 
 
 const videoData = [
@@ -175,7 +175,7 @@ const videoData = [
         id: 16,
         name: "Home Décor Ideas on a Budget",
         author: "Fiona White",
-        videoPic: vid1,
+        videoPic: vid16,
         profilePic: pic1,
         date: "3 months ago",
         views: "900",

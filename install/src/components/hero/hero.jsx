@@ -42,10 +42,10 @@ const tick = ()=>{
 }
 
   return (
-    <header className=' items-center text-slate-900 gap-1 sm:h-fit sm:flex mt-10'>
-       <div className='basis-1/2 flex flex-col mb-5 mx-2'>
-        <h1 className={` mx-auto  font-bold text-center xl:text-6xl lg:text-5xl text-3xl`}>GEORGE a <span className={` ${beat?'border-r':'border-transparent'} p-0 text-slate-600  border-r-slate-400`}>{text}</span></h1>
-        <p className='lg:text-xl xl:text-3xl text-center'>
+    <header className='gap-1  h-full sm:flex '>
+       <div className='basis-1/2 flex flex-col mb-5 justify-center z-10 mx-2'>
+        <h1 className={` mx-auto  font-bold text-center  xl:text-6xl lg:text-5xl text-3xl`}>GEORGE a <span className={` ${beat?'border-r':'border-transparent'} p-0 text-stone-700 border-r-slate-400`}>{text}</span></h1>
+        <p className='lg:text-xl xl:text-3xl text-center '>
         Aiming to create a lasting experience for you, prioritizing privacy agreements and adhering to various statements in the contract. Fulfilling every need can be a challenge, but I'm dedicated to a professional and enduring experience that goes beyond meeting expectations.
         </p>
         <div className='self-center mt-3 flex xl:gap-6 gap-3'>
@@ -69,9 +69,10 @@ const tick = ()=>{
         </div>
         
        </div>
-       <div className='text-center basis-1/2 text-9xl'>
+       <div className=' justify-self-center basis-1/2 text-9xl'>
         <img src={img} alt="" />
        </div>
+      
     </header>
   )
 }

@@ -13,10 +13,10 @@ function YoutubeNav(props) {
   const {setAside,aside} = useContext(Ecomcontext)
   const [search,setSearch] = useState(false)
   return (
-    <div className='w-full pb-4 flex z-[40] px-[18px] py-2 justify-between items-center sticky  top-16 bg-[#0F0F0F]'>
+    <div className='w-full pb-4 flex z-[60] px-[18px] py-2 justify-between items-center sticky  top-16 bg-[#0F0F0F]'>
       <button  className='flex  relative  items-center gap-2'>
         <SolarHamburgerMenuOutline onClick={()=>{setAside(!aside)}} className={`${window.innerWidth<699?"hidden":"block"} p-2 cursor-pointer rounded-[50%] transition hover:bg-[#262627]`}/>
-        <LogosYoutube onClick={()=>{setAside(!aside)}} className="cursor-pointer"/>
+        <LogosYoutube className="cursor-pointer"/>
         <div className='absolute text-gray-300 scale-90 top-0 -right-2 text-xs'>US</div>
       </button>
       <div className={`  justify-center px-10 flex-1 ${props.size>654?"flex":'hidden'}`}>
@@ -27,7 +27,7 @@ function YoutubeNav(props) {
          placeholder='Search' className={`w-[55%] bg-[#131213] border 
          rounded-l-full placeholder:text-[#7D8988] focus:border-blue-700 focus:outline-none  border-[#303030] text-slate-100  px-4 py-2`} type="text" />
          <button className='bg-[#252525] relative group rounded-r-full px-4 '><MaterialSymbolsLightSearch/>
-           <div className={`bg-[#717171] invisible  px-3 py-2 opacity-0 duration-200 group-hover:visible ease-in-out rounded-lg transition group-hover:opacity-100 left-0 -bottom-12 absolute`}>
+           <div className={`bg-[#717171] invisible  px-3 py-2 opacity-0 duration-200 group-hover:visible ease-in-out rounded-lg transition  group-hover:opacity-100 left-0 -bottom-12 absolute`}>
             <h2 className='text-sm text-slate-50'>Search</h2>
            </div>
          </button>

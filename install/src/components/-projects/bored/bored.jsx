@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import BoredNav from './components/boredNav/BoredNav';
+import BoredHero from './components/bordeHero/BoredHero';
 
-export default function Bored(){
+function Chessboard (){
   return (
-    <div>Bored</div>
+    <div>
+      <BoredNav/>
+      <BoredHero/>
+    </div>
   )
-}
+};
 
+export default Chessboard;
