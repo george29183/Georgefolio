@@ -1,61 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import allProducts from '../assets/allProduct'
-
+import Rectangle from '../subHero/Rectangle'
+import CellPhone from './CellPhone'
+import Computer from './Computer'
+import Watch from './vector2'
+import Camera from './Camera'
+import Headphone from './Headphone'
+import Gamepad from './Gamepad'
 export default function EcomProduct(){
-   const collection = allProducts.map((item,i)=>{
-    
-    if(i>6 &&i<11){
-     return(
-       <Link key={item.id} onClick={()=>{window.scrollTo(0,0)}} to={`/project/OWN/E-commerce/product/${item.id}`}> <div  className='group cursor-pointer mx-auto lg:w-full  w-[80%] items-center h-[max-content]  flex flex-col relative py-2 px-8 mt-12 text-black text-base font-bold
-        rounded-lg overflow-hidden transition-all
-         duration-700 ease-in-out shadow-md xl:text-3xl lg:text-2xl hover:scale-105
-          hover:shadow-lg  before:absolute before:top-0 
-          before:-left-full before:w-full before:h-full before:transition-all
-          active:scale-95
-            before:duration-500 before:ease-in-out before:z-[-1] before:rounded-lg 
-            hover:before:left-0'>
-          <div className=' mx-auto w-full h-80 bg-slate-300 rounded-xl'>
-            <img className='h-full relative bg-cover w-full rounded-xl' src={item.images[0]} />
-          </div>
-            <div className='flex flex-col w-full'>
-              <div className='flex justify-between px-2 w-full'>
-                <p className='text-lg text-slate-950'>{item.title}</p>
-              <div className='text-lg text-orange-700'>${Math.round(item.price-item.price*(item.discountPercentage/100))}
-              </div>
-              </div>
-              <div className='w-[100%] h-16 pl-5 text-xs text-slate-500 flex justify-between'>
-                <p className='w-[50%]'>{item.description}</p>
-                <p className='text-xl pr-2 line-through'>${item.price}</p>
-              </div>
-              
-            </div>
-       
-        </div></Link>
-        
-     )}else{null}
-    })
-
-  return (
-    <section className='bg-slate-100 flex flex-col h-[max-content] pt-16 '>
-    <div>
-        <h1 className='text-center lg:text-3xl xl:text-5xl text-bold text-slate-950 text-2xl'>OUR PRODUCTS</h1>
-        <p className='mx-auto text-center mt-2 lg:text-xl  text-slate-950 sm:w-[50%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam recusandae minus nobis odit impedit quos molestiae, quidem voluptate consequuntur eligendi itaque hic optio, unde sequi fugit? Quidem dolore dolorem similique?</p>
+  const [category,setCategory] = useState({
+    phones:false,
+    computers:false,
+    watch:false,
+    camera:false,
+    headphones:false,
+    gaming:false
+  })
+ return(
+  <div className=' px-2 lg:px-[135px] gap-10 lg:gap-24 flex flex-col'>
+  <div className='flex flex-col gap-5'>
+    <div className='flex items-center gap-4 text-[#db4444] font-semibold'>
+       <Rectangle/>
+       <h1>Categories</h1>
     </div>
-    <hr className='border-t-2 border-slate-900 w-[30%]  mx-auto mt-10'/>
-    <div className=' pt-10  gap-5 lg:flex grid grid-cols-1 mx-5 '>
-       {collection}
-    </div>
-    <Link className='self-center' to="/project/OWN/E-commerce/products"><button onClick={()=>{window.scrollTo(0,0)}} className='self-center mx-auto
-     relative py-2 px-8 mt-12 text-black text-base font-bold
-           rounded-lg overflow-hidden bg-slate-50 transition-all
-            duration-700 mb-12 ease-in-out shadow-md xl:text-3xl lg:text-2xl hover:scale-105 hover:text-white
-             hover:shadow-lg active:scale-90 before:absolute before:top-0 
-             before:-left-full before:w-full before:h-full before:bg-gradient-to-r
-              before:from-slate-900 before:to-slate-500 before:transition-all
-               before:duration-500 before:ease-in-out before:z-[-1] before:rounded-lg 
-               hover:before:left-0'>More Products</button></Link>
-    </section>
-  )
+   <div className='flex lg:flex-row gap-8 flex-col lg:gap-20 lg:items-end'>
+      <h1 className='text-4xl lg:text-5xl'>Browse By Category</h1>
+      </div>
+      <div className='flex flex-col gap-4  mt-16 lg:flex-row'>
+        <button onClick={()=>{setCategory({category:false,phones:true})}} className={`flex flex-col items-center justify-center px-14 ${category.phones?"bg-[#db4444]":null} py-5 border border-gray-500 mx-auto w-[40%] sm:w-[30%] lg:w-[15%]`}><CellPhone stroke={category.phones?"white":"black"}/>
+         <h1 className={`${category.phones?"text-white":null}`}>Phones</h1>
+        </button>
+        <button onClick={()=>{setCategory({category:false,computers:true})}} className={`flex flex-col items-center justify-center px-14 ${category.computers?"bg-[#db4444]":null} py-5 border border-gray-500 mx-auto w-[40%] sm:w-[30%] lg:w-[15%]`}><Computer stroke={category.computers?"white":"black"}/>
+        <h1 className={`${category.computers?"text-white":null}`}>Computers</h1>
+        </button>
+        <button onClick={()=>{setCategory({category:false,watch:true})}} className={`flex flex-col items-center justify-center px-14 ${category.watch?"bg-[#db4444]":null} py-5 border border-gray-500 mx-auto w-[40%] sm:w-[30%] lg:w-[15%]`}><Watch fill={category.watch?"#db4444":"white"} stroke={category.watch?"white":"black"}/>
+        <h1 className={`${category.watch?"text-white":null}`}>Watch</h1>
+        </button>
+        <button onClick={()=>{setCategory({category:false,camera:true})}} className={`flex flex-col items-center justify-center px-14 ${category.camera?"bg-[#db4444]":null} py-5 border border-gray-500 mx-auto w-[40%] sm:w-[30%] lg:w-[15%]`}><Camera stroke={category.camera?"white":"black"}/>
+        <h1 className={`${category.camera?"text-white":null}`}>Camera</h1>
+        </button>
+        <button onClick={()=>{setCategory({category:false,headphones:true})}} className={`flex flex-col items-center justify-center px-14 ${category.headphones?"bg-[#db4444]":null} py-5 border border-gray-500 mx-auto w-[40%] sm:w-[30%] lg:w-[15%]`}><Headphone stroke={category.headphones?"white":"black"}/>
+        <h1 className={`${category.headphones?"text-white":null}`}>HeadPhones</h1>
+        </button>
+        <button onClick={()=>{setCategory({category:false,gaming:true})}} className={`flex flex-col items-center justify-center px-14 ${category.gaming?"bg-[#db4444]":null} py-5 border border-gray-500 mx-auto w-[40%] sm:w-[30%] lg:w-[15%]`}><Gamepad stroke={category.gaming?"white":"black"}/>
+        <h1 className={`${category.gaming?"text-white":null}`}>Gaming</h1>
+        </button>
+      </div>
+   </div>
+   <hr className='mt-16 w-full mb-20'/>
+   </div>
+ ) 
+ 
 }
 

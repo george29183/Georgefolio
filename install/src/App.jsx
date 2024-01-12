@@ -25,9 +25,10 @@ import Producty from './components/-projects/own/components/ecommerce/producty'
 import OwnContact from './components/-projects/own/components/ecommerce/contact'
 import LandingPage from './components/-projects/own/components/Landing-Page/LandingPage'
 import Youtube from './components/-projects/clones/components/youtube/Youtube'
-
+import  EcomAbout from './components/-projects/own/components/ecommerce/EcomAbout'
+import Sign from './components/-projects/own/components/ecommerce/Sign'
 import NewsApi from './components/-projects/api\'s/components/newsApi/NewsApi'
-
+import Wishlist from './components/-projects/own/components/ecommerce/Wishlist'
 
 function App() {
 
@@ -50,6 +51,10 @@ function App() {
         <Route path='/project/OWN/E-commerce/contact' element={<OwnContact/>}>
         </Route>
         <Route path='/project/OWN/E-commerce/cart' element={<Cart/>}></Route>
+        <Route path='/project/OWN/E-commerce/about' element={< EcomAbout/>}></Route>
+        <Route path='/project/OWN/E-commerce/account' element={<Sign/>}></Route>
+        <Route path='/project/OWN/E-commerce/wishlist' element={<Wishlist/>}></Route>
+
           <Route path='/project/OWN/Blog' element={<Blog/>}></Route>
           <Route path='/project/OWN/Landing-Page' element={<LandingPage/>}></Route>
         <Route path='/project/clones' element={<Clones/>}></Route>

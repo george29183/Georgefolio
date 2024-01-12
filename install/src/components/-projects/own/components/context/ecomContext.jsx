@@ -5,6 +5,7 @@ export const Ecomcontext = createContext(null)
 const EcomContextProvider = (props)=>{
     const [cartItem,setCartItem] = useState(0)
     const [cart,addCart] = useState([])
+    const [wishlists,setWishlist] = useState([])
     const [quan,setQuan] = useState(null)
     const [showPopup, setShowPopup] = useState(false);
     const [aside,setAside] = useState(false)
@@ -68,8 +69,16 @@ const EcomContextProvider = (props)=>{
 
       }
      
+     const addToWishlist = (item)=>{
+         setWishlist([...wishlists,item])
+     }
+     const removeFromWishlist = (item) => {
+      setWishlist((prevWishlists) => prevWishlists.filter((wishlistItem) => wishlistItem !== item));
+    };
+    
 
-    const contextValue = {cartItem,all_Products,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside}
+
+    const contextValue = {cartItem,all_Products,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside,addToWishlist,wishlists,removeFromWishlist}
     return(
         <Ecomcontext.Provider value={contextValue}>
             {props.children}

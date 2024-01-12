@@ -1,18 +1,83 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-
+import Rectangle from './Rectangle'
+import SubHeroProduct from './SubHeroProduct';
 export default function EcomSubHero(){
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const targetDate = new Date('2024-02-01T00:00:00'); // Replace with your target date
+
+    const difference = targetDate - now;
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((difference % (1000 * 60)) / 1000),
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className='h-[max-content] lg:flex flex-row-reverse gap-2 items-center rounded-t-xl text-slate-50 bg-gradient-to-b from-orange-900 to-slate-100'>
-        <div className='basis-1/2 p-2 flex flex-col items-center'>
-            <h1  className='text-2xl xl:text-6xl lg:text-4xl text-center'>AFFORDABLE PRICES</h1>
-            <p className='lg:text-xl text-center
-            '>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa autem recusandae architecto ratione, magnam eius! Placeat recusandae laborum illum neque temporibus, corporis omnis alias architecto ut sapiente, amet harum quidem.</p>
-            <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/products"><button className='text-xl lg:text-2xl bg-slate-300 mt-4 rounded-xl py-2 px-6 text-slate-900 hover:scale-105 active:scale-95 hover:bg-red-700 hover:text-slate-50 transition'>Shop Now</button></Link>
+    <div className='lg:mt-36 mt-16 px-2 lg:px-[135px] gap-10 lg:gap-20 flex flex-col'>
+      <div className='flex flex-col gap-5'>
+        <div className='flex items-center gap-4 text-[#db4444] font-semibold'>
+           <Rectangle/>
+           <h1>Today's</h1>
         </div>
-        <div className='basis-1/2 pt-8'>
+       <div className='flex lg:flex-row gap-8 flex-col lg:gap-20 lg:items-end'>
+          <h1 className='text-4xl lg:text-5xl'>Flash Sales</h1>
+          <div className='flex self-end gap-4'>
+        <div className="text-center flex flex-col-reverse ">
+          <div className="text-2xl lg:text-4xl font-bold">{timeLeft.days<10?"0"+timeLeft.days:timeLeft.days}</div>
+          <div>Days</div>
         </div>
+        <div className='flex flex-col py-2 justify-end  gap-1 lg:gap-3'>
+          <div className='w-1 h-1 rounded-[50%] bg-[#E07575]'></div>
+          <div className='w-1 h-1 rounded-[50%] bg-[#E07575]'></div>
         </div>
+        <div className="text-center flex flex-col-reverse">
+          <div className="text-2xl lg:text-4xl font-bold">{timeLeft.hours<10?"0"+timeLeft.hours:timeLeft.hours}</div>
+          <div>Hours</div>
+        </div>
+        <div className='flex flex-col justify-end py-2  gap-1 lg:gap-3'>
+          <div className='w-1 h-1 rounded-[50%] bg-[#E07575]'></div>
+          <div className='w-1 h-1 rounded-[50%] bg-[#E07575]'></div>
+        </div>
+        <div className="text-center flex flex-col-reverse">
+          <div className="text-2xl lg:text-4xl font-bold">{timeLeft.minutes<10?"0"+timeLeft.minutes:timeLeft.minutes}</div>
+          <div>Minutes</div>
+        </div>
+        <div className='flex flex-col justify-end py-2 gap-1 lg:gap-3'>
+          <div className='w-1 h-1 rounded-[50%] bg-[#E07575]'></div>
+          <div className='w-1 h-1 rounded-[50%] bg-[#E07575]'></div>
+        </div>
+        <div className="text-center flex flex-col-reverse">
+          <div className="text-2xl lg:text-4xl font-bold">{timeLeft.seconds<10?"0"+timeLeft.seconds:timeLeft.seconds}</div>
+          <div>Seconds</div>
+        </div>
+      </div>
+    </div>
+       </div>
+       <SubHeroProduct/>
+       <Link onClick={()=>{window.scrollTo(0,0)}} className='mx-auto' to="/project/OWN/E-commerce/products"><button className='py-4 px-12 bg-[#db4444] shadow-md hover:bg-opacity-95 hover:shadow-lg active:scale-95 transition-all text-[#f5f5f5] '>View All Products</button></Link>
+
+       <hr className='mt-16 w-full mb-20'/>
+       </div>
   )
 }
 
