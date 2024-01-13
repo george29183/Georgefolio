@@ -3,13 +3,13 @@ import { Ecomcontext } from '../../../context/ecomContext'
 import Wishlist from '../../../own-navbar/assets/wishlist'
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
-function SubHeroProduct() {
+function SubHeroProduct(props) {
     const {all_Products,wishlists,addToWishlist,removeFromWishlist} = useContext(Ecomcontext)
   
     const fourProducts = all_Products.map((item,i)=>{
       
-        return i===6 || i===23 || i===60 || i===94?(
-        <div className='lg:w-[25%] w-[75%] sm:w-[90%] mx-auto h-full  shadow-md' key={i}>
+        return i===props.first || i===props.second || i===props.third || i===props.forth ||  i===props.fifth || i===props.sixth || i===props.seventh || i===props.eighth ?(
+        <div className={`${props.large?"lg:w-full":"lg:w-[25%]"} w-[75%] sm:w-[90%] mx-auto h-full  shadow-md`} key={i}>
             <div className='w-full h-[71%] relative cursor-pointer'>
               <Link to={`/project/OWN/E-commerce/product/${item.id}`}><img className='h-full w-full' src={item.images[0]} alt="" /></Link>
                  <button onClick={()=>{wishlists.includes(item)?removeFromWishlist(item):addToWishlist(item)}} className='absolute rounded-[50%] top-2 p-1 right-2 shadow-md hover:shadow-lg flex hover:scale-105 transition justify-center items-center bg-[#f5f5f5]'>
@@ -40,7 +40,7 @@ function SubHeroProduct() {
         ):null
     })
   return (
-    <div className='grid grid-cols-1 flex-col sm:grid-cols-2  lg:flex-row select-none w-full lg:h-[400px] lg:flex lg:gap-4 gap-2'>
+    <div className={`grid grid-cols-1 flex-col sm:grid-cols-2  ${props.large?"lg:grid-cols-3 xl:grid-cols-4":"lg:flex-row lg:flex lg:h-[400px]"} select-none w-full   lg:gap-4 gap-2`}>
       {fourProducts}
     </div>
   )

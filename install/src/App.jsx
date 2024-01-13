@@ -29,11 +29,12 @@ import  EcomAbout from './components/-projects/own/components/ecommerce/EcomAbou
 import Sign from './components/-projects/own/components/ecommerce/Sign'
 import NewsApi from './components/-projects/api\'s/components/newsApi/NewsApi'
 import Wishlist from './components/-projects/own/components/ecommerce/Wishlist'
+import SignUp from './components/-projects/own/components/ecommerce/components/signUp&In/SignUp'
 
 function App() {
 
   return (
-    <div className=''>
+    <div className='max-w-[1550px] xl:mx-auto'>
       <EcomContextProvider>
     <BrowserRouter>
     <Navbar/>
@@ -52,7 +53,7 @@ function App() {
         </Route>
         <Route path='/project/OWN/E-commerce/cart' element={<Cart/>}></Route>
         <Route path='/project/OWN/E-commerce/about' element={< EcomAbout/>}></Route>
-        <Route path='/project/OWN/E-commerce/account' element={<Sign/>}></Route>
+        <Route path='/project/OWN/E-commerce/account' element={<SignUp signUp={true}/>}></Route>
         <Route path='/project/OWN/E-commerce/wishlist' element={<Wishlist/>}></Route>
 
           <Route path='/project/OWN/Blog' element={<Blog/>}></Route>

@@ -36,10 +36,10 @@ function Nav2() {
     </div>
     <div className={size>1190?"block":"hidden"}>
      <ul className='flex gap-10 items-center'>
-     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce"><li className=' text-xl hover:scale-105 cursor-pointer'>Home</li></Link>
-     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/contact"> <li className='hover:scale-105 transition text-xl  cursor-pointer '>Contact</li></Link>
-     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/about"> <li className='hover:scale-105 transition text-xl  cursor-pointer '>About</li></Link>
-     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/account"> <li className='hover:scale-105 transition text-xl  cursor-pointer '>Sign Up</li></Link>
+     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce"><li className=' text-lg hover:scale-105 cursor-pointer'>Home</li></Link>
+     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/contact"> <li className='hover:scale-105 transition text-lg  cursor-pointer '>Contact</li></Link>
+     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/about"> <li className='hover:scale-105 transition text-lg  cursor-pointer '>About</li></Link>
+     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/account"> <li className='hover:scale-105 transition text-lg  cursor-pointer '>Sign Up</li></Link>
      </ul>
     </div>
     <div className='flex gap-5 items-center'>

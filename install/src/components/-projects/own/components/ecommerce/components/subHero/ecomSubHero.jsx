@@ -73,7 +73,13 @@ export default function EcomSubHero(){
       </div>
     </div>
        </div>
-       <SubHeroProduct/>
+       <SubHeroProduct
+       first={6}
+       second={23}
+       third={63}
+       forth={70}
+       
+       />
        <Link onClick={()=>{window.scrollTo(0,0)}} className='mx-auto' to="/project/OWN/E-commerce/products"><button className='py-4 px-12 bg-[#db4444] shadow-md hover:bg-opacity-95 hover:shadow-lg active:scale-95 transition-all text-[#f5f5f5] '>View All Products</button></Link>
 
        <hr className='mt-16 w-full mb-20'/>

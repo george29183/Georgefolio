@@ -6,6 +6,7 @@ const EcomContextProvider = (props)=>{
     const [cartItem,setCartItem] = useState(0)
     const [cart,addCart] = useState([])
     const [wishlists,setWishlist] = useState([])
+    const [Sign,setSign] = useState(false)
     const [quan,setQuan] = useState(null)
     const [showPopup, setShowPopup] = useState(false);
     const [aside,setAside] = useState(false)

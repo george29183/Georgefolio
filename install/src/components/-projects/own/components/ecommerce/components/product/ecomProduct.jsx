@@ -18,7 +18,7 @@ export default function EcomProduct(){
     gaming:false
   })
  return(
-  <div className=' px-2 lg:px-[135px] gap-10 lg:gap-24 flex flex-col'>
+  <div className=' px-2 lg:px-[135px] gap-10 lg:gap-16 flex flex-col'>
   <div className='flex flex-col gap-5'>
     <div className='flex items-center gap-4 text-[#db4444] font-semibold'>
        <Rectangle/>
@@ -48,7 +48,7 @@ export default function EcomProduct(){
         </button>
       </div>
    </div>
-   <hr className='mt-16 w-full mb-20'/>
+   <hr className='mt-4 w-full mb-20'/>
    </div>
  ) 
  
