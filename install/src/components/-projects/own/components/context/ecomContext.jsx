@@ -20,18 +20,20 @@ const EcomContextProvider = (props)=>{
       }, 2000);
     };
 
-    const quantity = (item)=>{
-        item.quantity += 1
+    const quantity = (item,count)=>{
+      count?item.quantity += count:
+        item.quantity += 1 
     }
     const deleteItem = (item)=>{
       setQuan(item.quantity-=1)
       setCartItem(cartItem-1)
+      item.quantity===0? addCart((prevCart) => prevCart.filter((cartItem) => cartItem !== item)):null
      return quan
   }
   const completeDelete = (item)=>{
     setCartItem(cartItem-item.quantity)
     setQuan(item.quantity=0)
-    
+    addCart((prevCart) => prevCart.filter((cartItem) => cartItem !== item))
    return quan
   }
   const addItem = (item)=>{
@@ -77,9 +79,24 @@ const EcomContextProvider = (props)=>{
       setWishlist((prevWishlists) => prevWishlists.filter((wishlistItem) => wishlistItem !== item));
     };
     
+     const moveAllToBag = ()=>{
+         wishlists.map((item,i)=>{
+          setCartItem(prev=> prev+1); 
+                    if(item.quantity === 0 && !cart.includes(item) ){
+                         addCart(prev=>[...prev, item])
+                         quantity(item)
+                    }else{ quantity(item) }
+         })
+     }
+     const addToCart = (item)=>{
+      setCartItem(prev=> prev+1); 
+                    if(item.quantity === 0 && !cart.includes(item) ){
+                         addCart(prev=>[...prev, item])
+                         quantity(item)
+                    }else{ quantity(item) }
+     }
 
-
-    const contextValue = {cartItem,all_Products,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside,addToWishlist,wishlists,removeFromWishlist}
+    const contextValue = {cartItem,all_Products,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside,addToWishlist,wishlists,removeFromWishlist,moveAllToBag,setWishlist,addToCart}
     return(
         <Ecomcontext.Provider value={contextValue}>
             {props.children}

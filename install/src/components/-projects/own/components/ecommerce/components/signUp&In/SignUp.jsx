@@ -3,6 +3,7 @@ import Nav2 from '../../../own-navbar/nav2'
 import Footer from '../footer/Footer'
 import account from './dl-beatsnoop-1.png'
 import IconGoogle from './IconGoogle'
+import { Link } from 'react-router-dom'
 function SignUp(props) {
   return (
     <section>
@@ -24,7 +25,7 @@ function SignUp(props) {
             Sign up with Google</button>
           <div className={`${props.signUp?"flex":"hidden"} self-center  gap-8 mt-8`}>
             <p className=' cursor-pointer'>Already have account?</p>
-            <button className=' underline-offset-8 hover:underline-offset-2 hover:scale-105 transition-all underline'>Log in</button>
+            <Link to="/project/OWN/E-commerce/account/login"><button className=' underline-offset-8 hover:underline-offset-2 hover:scale-105 transition-all underline'>Log in</button></Link>
           </div>
          </div>
       </div>

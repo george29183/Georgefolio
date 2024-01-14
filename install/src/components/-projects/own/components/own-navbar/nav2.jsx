@@ -6,10 +6,11 @@ import IconsArrowLeft from './assets/IconsArrowLeft'
 import RiMenu2Fill from '../Landing-Page/components/assets/RiMenu2Fill'
 import { Link } from 'react-router-dom'
 import { Ecomcontext } from '../context/ecomContext'
+import User from './assets/TdesignUser1'
 
 
 function Nav2() {
-  const {cartItem} = useContext(Ecomcontext)
+  const {cartItem,wishlists} = useContext(Ecomcontext)
   const [search,setSearch] = useState(false)
   const [size,setSize] = useState(window.innerWidth)
   useEffect(()=>{
@@ -38,8 +39,9 @@ function Nav2() {
      <ul className='flex gap-10 items-center'>
      <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce"><li className=' text-lg hover:scale-105 cursor-pointer'>Home</li></Link>
      <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/contact"> <li className='hover:scale-105 transition text-lg  cursor-pointer '>Contact</li></Link>
+     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/products"> <li className='hover:scale-105 transition text-lg  cursor-pointer '>Products</li></Link>
      <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/about"> <li className='hover:scale-105 transition text-lg  cursor-pointer '>About</li></Link>
-     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/account"> <li className='hover:scale-105 transition text-lg  cursor-pointer '>Sign Up</li></Link>
+  
      </ul>
     </div>
     <div className='flex gap-5 items-center'>
@@ -49,9 +51,14 @@ function Nav2() {
       <Component/>
      </button>
       </div>
-     <Link onClick={()=>{window.scrollTo(0,0)}} className={` ${size<640?"hidden":"flex"} items-center`} to="/project/OWN/E-commerce/wishlist"><button><Wishlist/></button></Link>
+     <Link onClick={()=>{window.scrollTo(0,0)}} className={` ${size<640?"hidden":"flex"} items-center`} to="/project/OWN/E-commerce/wishlist"><button className='relative'><Wishlist/>
+     <div className={` absolute ${wishlists.length===0?"invisible  opacity-0":"visible opacity-100 "} -top-[6px] -right-1 duration-500 ease-in-out rounded-full w-5 bg-[#db4444] text-sm text-slate-50 text-center`}>{wishlists.length}</div>
+     </button></Link>
      <Link className='w-full h-full flex items-center' onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/cart"><button className='relative w-full h-full'><Cart className="w-[1.6em] h-[1.6em]"/>
-     <div className='absolute -top-[8px] -right-2 rounded-full w-5 bg-red-800 text-sm text-slate-50 text-center'>{cartItem}</div>
+     <div className={`absolute -top-[8px] -right-2 rounded-full ${cartItem===0?"invisible  opacity-0":"visible opacity-100 "} w-5 duration-500 ease-in-out bg-[#db4444] text-sm text-slate-50 text-center`}>{cartItem}</div>
+     </button></Link>
+     <Link onClick={()=>{window.scrollTo(0,0)}} to="/project/OWN/E-commerce/account/signup"><button className='bg-[#db4444] rounded-full hover:scale-105 active:scale-95 transition  p-1'>
+      <User/>
      </button></Link>
      <button className={size>1190?"hidden":"block ml-4"}><RiMenu2Fill className="text-xs hover:scale-105 transition"/></button>
     </div>

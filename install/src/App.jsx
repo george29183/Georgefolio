@@ -26,10 +26,12 @@ import OwnContact from './components/-projects/own/components/ecommerce/contact'
 import LandingPage from './components/-projects/own/components/Landing-Page/LandingPage'
 import Youtube from './components/-projects/clones/components/youtube/Youtube'
 import  EcomAbout from './components/-projects/own/components/ecommerce/EcomAbout'
-import Sign from './components/-projects/own/components/ecommerce/Sign'
 import NewsApi from './components/-projects/api\'s/components/newsApi/NewsApi'
 import Wishlist from './components/-projects/own/components/ecommerce/Wishlist'
 import SignUp from './components/-projects/own/components/ecommerce/components/signUp&In/SignUp'
+import Cart2 from './components/-projects/own/components/ecommerce/Cart2'
+import Checkout from './components/-projects/own/components/ecommerce/Checkout'
+import Product2 from './components/-projects/own/components/ecommerce/Product2'
 
 function App() {
 
@@ -44,16 +46,18 @@ function App() {
       <Route path='/project'>
         <Route path='/project/OWN' element={<OWN/>}></Route>
         <Route path='/project/OWN/E-commerce' element={<Ecommerce/>}></Route>
-        <Route path='/project/OWN/E-commerce/products' element={<Product/>}>
+        <Route path='/project/OWN/E-commerce/products' element={<Product2/>}>
         </Route>
         <Route path='/project/OWN/E-commerce/product' element={<Producty/>}>
           <Route path=':productId' element={<Producty/>}/>
         </Route>
         <Route path='/project/OWN/E-commerce/contact' element={<OwnContact/>}>
         </Route>
-        <Route path='/project/OWN/E-commerce/cart' element={<Cart/>}></Route>
+        <Route path='/project/OWN/E-commerce/cart' element={<Cart2/>}></Route>
+        <Route path='/project/OWN/E-commerce/cart/checkout' element={<Checkout/>}></Route>
         <Route path='/project/OWN/E-commerce/about' element={< EcomAbout/>}></Route>
-        <Route path='/project/OWN/E-commerce/account' element={<SignUp signUp={true}/>}></Route>
+        <Route path='/project/OWN/E-commerce/account/signup' element={<SignUp signUp={true}/>}></Route>
+        <Route path='/project/OWN/E-commerce/account/login' element={<SignUp signUp={false}/>}></Route>
         <Route path='/project/OWN/E-commerce/wishlist' element={<Wishlist/>}></Route>
 
           <Route path='/project/OWN/Blog' element={<Blog/>}></Route>

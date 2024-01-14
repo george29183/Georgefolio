@@ -1,16 +1,21 @@
 import React, { useContext, useState } from 'react'
-import { Ecomcontext } from '../../../context/ecomContext'
-import Wishlist from '../../../own-navbar/assets/wishlist'
+import Wishlist from '../own-navbar/assets/wishlist'
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
-import MaterialSymbolsAddShoppingCartSharp from '../product/MaterialSymbolsAddShoppingCartSharp'
-function SubHeroProduct(props) {
-    const {all_Products,wishlists,addToWishlist,removeFromWishlist,addToCart} = useContext(Ecomcontext)
-  
+import MaterialSymbolsAddShoppingCartSharp from './components/product/MaterialSymbolsAddShoppingCartSharp';
+import Nav2 from '../own-navbar/nav2'
+import Footer from './components/footer/Footer'
+import SubHeroProduct from './components/subHero/SubHeroProduct'
+import { Ecomcontext } from '../context/ecomContext';
+
+
+function Product2() {
+    const [page,setPage] = useState(8)
+ const {all_Products,wishlists,addToWishlist,removeFromWishlist,addToCart} = useContext(Ecomcontext)
     const fourProducts = all_Products.map((item,i)=>{
       
-        return i===props.first || i===props.second || i===props.third || i===props.forth ||  i===props.fifth || i===props.sixth || i===props.seventh || i===props.eighth ?(
-        <div className={`${props.large?"lg:w-full":"lg:w-[25%]"} w-[75%] sm:w-[90%] mx-auto h-full  shadow-md`} key={i}>
+        return i<page? (
+        <div className={`$ w-[75%] sm:w-[90%] mx-auto h-full lg:w-full shadow-md`} key={i}>
             <div className='w-full h-[71%] relative  cursor-pointer'>
               <Link to={`/project/OWN/E-commerce/product/${item.id}`}><img className='h-full w-full' src={item.images[0]} alt="" /></Link>
                  <button onClick={()=>{wishlists.includes(item)?removeFromWishlist(item):addToWishlist(item)}} className='absolute rounded-[50%] top-2 p-1 right-2 shadow-md hover:shadow-lg flex hover:scale-105 transition justify-center  items-center bg-[#f5f5f5]'>
@@ -43,12 +48,24 @@ function SubHeroProduct(props) {
             </div></Link>
         </div>  
         ):null
-    })
+        })
   return (
-    <div className={`grid grid-cols-1 flex-col sm:grid-cols-2  ${props.large?"lg:grid-cols-3 xl:grid-cols-4":"lg:flex-row lg:flex lg:h-[400px]"} select-none w-full   lg:gap-4 gap-2`}>
-      {fourProducts}
-    </div>
+    <section>
+       <Nav2/>
+       <div className='w-full mb-32 px-12 lg:px-[135px] flex justify-center items-center'>
+        <h1 className='mt-10 text-5xl'>All Products</h1>
+       </div>
+       <div className={`grid grid-cols-1 flex-col sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 select-none w-full px-12 lg:px-[135px]   lg:gap-4 gap-2`}>
+         {fourProducts}
+       </div>
+       <div className='w-full flex justify-center items-center'>
+        <button className='text-3xl py-2 px-3 bg-[#db4444] text-[#fafafa] rounded-md shadow-md flex justify-center items-center hover:scale-105 transition active:scale-95'>{`<`}</button>
+        <h1 className='text-3xl'>{page/10}/9</h1>
+        <button className='text-3xl py-2 px-3 bg-[#db4444] text-[#fafafa] rounded-md shadow-md flex justify-center items-center hover:scale-105 transition active:scale-95'>{`>`}</button>
+       </div>
+       <Footer/>
+    </section>
   )
 }
 
-export default SubHeroProduct
+export default Product2
