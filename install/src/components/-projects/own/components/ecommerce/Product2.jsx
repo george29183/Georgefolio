@@ -10,13 +10,14 @@ import { Ecomcontext } from '../context/ecomContext';
 
 
 function Product2() {
-    const [page,setPage] = useState(8)
+    const [page,setPage] = useState(0)
+    const [next,setNext] = useState(8)
  const {all_Products,wishlists,addToWishlist,removeFromWishlist,addToCart} = useContext(Ecomcontext)
     const fourProducts = all_Products.map((item,i)=>{
       
-        return i<page? (
+        return i>=page && i<next? (
         <div className={`$ w-[75%] sm:w-[90%] mx-auto h-full lg:w-full shadow-md`} key={i}>
-            <div className='w-full h-[71%] relative  cursor-pointer'>
+            <div className='w-full h-[70%] relative  cursor-pointer'>
               <Link to={`/project/OWN/E-commerce/product/${item.id}`}><img className='h-full w-full' src={item.images[0]} alt="" /></Link>
                  <button onClick={()=>{wishlists.includes(item)?removeFromWishlist(item):addToWishlist(item)}} className='absolute rounded-[50%] top-2 p-1 right-2 shadow-md hover:shadow-lg flex hover:scale-105 transition justify-center  items-center bg-[#f5f5f5]'>
                     <Wishlist fill={wishlists.includes(item)?"#db4444":"none"}
@@ -27,7 +28,7 @@ function Product2() {
                       <MaterialSymbolsAddShoppingCartSharp/>
                     </button> 
             </div>
-            <Link to={`/project/OWN/E-commerce/product/${item.id}`}><div  className='p-1 flex flex-col gap-[2px]'>
+            <Link className=' ' to={`/project/OWN/E-commerce/product/${item.id}`}><div  className='flex pb-4 px-2 flex-col gap-[2px]'>
                <div >
                 <h1 className='text-lg font-semibold'>{item.title}</h1>
                </div>
@@ -58,10 +59,10 @@ function Product2() {
        <div className={`grid grid-cols-1 flex-col sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 select-none w-full px-12 lg:px-[135px]   lg:gap-4 gap-2`}>
          {fourProducts}
        </div>
-       <div className='w-full flex justify-center items-center'>
-        <button className='text-3xl py-2 px-3 bg-[#db4444] text-[#fafafa] rounded-md shadow-md flex justify-center items-center hover:scale-105 transition active:scale-95'>{`<`}</button>
-        <h1 className='text-3xl'>{page/10}/9</h1>
-        <button className='text-3xl py-2 px-3 bg-[#db4444] text-[#fafafa] rounded-md shadow-md flex justify-center items-center hover:scale-105 transition active:scale-95'>{`>`}</button>
+       <div className='w-full mb-32 flex mt-32 justify-center gap-10 items-center'>
+        <button onClick={page>0?()=>{setNext(next-8);setPage(page-8)}:null} className='text-3xl py-2 px-3 bg-[#db4444] text-[#fafafa] rounded-md shadow-md flex justify-center items-center hover:scale-105 transition active:scale-95'>{`<`}</button>
+        <h1 className='text-3xl'>{page/8+1}/13</h1>
+        <button onClick={next<100?()=>{setNext(next+8);setPage(page+8)}:null} className='text-3xl py-2 px-3 bg-[#db4444] text-[#fafafa] rounded-md shadow-md flex justify-center items-center hover:scale-105 transition active:scale-95'>{`>`}</button>
        </div>
        <Footer/>
     </section>

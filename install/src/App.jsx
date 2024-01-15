@@ -36,10 +36,11 @@ import Product2 from './components/-projects/own/components/ecommerce/Product2'
 function App() {
 
   return (
-    <div className='max-w-[1550px] xl:mx-auto'>
+    <div >
       <EcomContextProvider>
     <BrowserRouter>
     <Navbar/>
+    <div className='max-w-[1550px] xl:mx-auto'>
     <Routes>
       <Route path='/' element={<Home/>}></Route> 
       <Route path='/about' element={<About/>}></Route>
@@ -78,7 +79,7 @@ function App() {
       </Route>
       <Route path='/contact' element={<Contact/>}></Route>
     </Routes>
-   
+    </div>
     </BrowserRouter>
     </EcomContextProvider>
     </div>
