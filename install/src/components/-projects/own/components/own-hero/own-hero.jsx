@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ecom from '../assets/ecom.jpg'
+import ecom from '../assets/newEcom.jpg'
 import blogy from '../assets/blog.jpg'
 import land from '../assets/land.jpg'
 import LogosReact from '../../../components/assets/LogosReact'

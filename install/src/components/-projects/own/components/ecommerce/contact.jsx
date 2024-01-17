@@ -7,7 +7,7 @@ import Footer from './components/footer/Footer'
 export default function OwnContact(){
   return (
     <section>
-      <Nav2/>
+      <Nav2 paths="contact"/>
       <div className='px-2 lg:px-[135px] flex flex-col gap-20 mt-10 mb-32'>
        <h1 className='text-gray-400'>Home / <span className='text-[#212121] font-semibold ml-1'>Contact</span></h1>
        <div className='flex flex-col-reverse lg:flex-row items-center gap-8'>

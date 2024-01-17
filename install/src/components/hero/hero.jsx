@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import img from '../assets/img.svg'
 import { Link } from 'react-router-dom'
+import SimpleIconsFacebook from '../assets/SimpleIconsFacebook'
+import SimpleIconsWhatsapp from '../assets/SimpleIconsWhatsapp'
+import SimpleIconsLinkedin from '../assets/SimpleIconsLinkedin'
+import SimpleIconsX from '../assets/SimpleIconsX'
 
 export default function Hero(){
   const word = ['Friend','Teammate','Web Developer']
@@ -42,30 +46,25 @@ const tick = ()=>{
 }
 
   return (
-    <header className='gap-1  h-full sm:flex '>
-       <div className='basis-1/2 flex flex-col mb-5 justify-center z-10 mx-2'>
+    <header className='gap-1 bg-[#f5f5f5]  h-full sm:flex '>
+       <div className='basis-1/2 flex flex-col mb-5 justify-center gap-5 z-10 mx-2'>
         <h1 className={` mx-auto  font-bold text-center  xl:text-6xl lg:text-5xl text-3xl`}>GEORGE a <span className={` ${beat?'border-r':'border-transparent'} p-0 text-stone-700 border-r-slate-400`}>{text}</span></h1>
-        <p className='lg:text-xl xl:text-3xl text-center '>
+        <p className='lg:text-xl xl:text-2xl text-center '>
         Aiming to create a lasting experience for you, prioritizing privacy agreements and adhering to various statements in the contract. Fulfilling every need can be a challenge, but I'm dedicated to a professional and enduring experience that goes beyond meeting expectations.
         </p>
         <div className='self-center mt-3 flex xl:gap-6 gap-3'>
-          <Link to='/about'><button className='relative py-2 px-8 text-black text-base font-bold
-           rounded-lg overflow-hidden bg-slate-50 transition-all
-            duration-700 ease-in-out shadow-md xl:text-3xl lg:text-2xl hover:scale-105 hover:text-white
-             hover:shadow-lg active:scale-90 before:absolute before:top-0 
-             before:-left-full before:w-full before:h-full before:bg-gradient-to-r
-              before:from-slate-900 before:to-slate-500 before:transition-all
-               before:duration-500 before:ease-in-out before:z-[-1] before:rounded-lg 
-               hover:before:left-0'>Learn More</button></Link>
-          
-          <Link to='/contact'><button className='relative py-2 px-8 text-slate-50 text-base font-bold
-            rounded-lg overflow-hidden bg-blue-500 transition-all
-            duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white
-             hover:shadow-lg active:scale-90 xl:text-3xl lg:text-2xl before:absolute before:top-0 
-             before:-left-full before:w-full before:h-full before:bg-gradient-to-r
-              before:from-slate-900 before:to-blue-600 before:transition-all
-               before:duration-500 before:ease-in-out before:z-[-1] before:rounded-lg 
-               hover:before:left-0'>Connect</button></Link>
+         <div className='social px-5 rounded-2xl py-5 hover:scale-105 transition cursor-pointer hover:bg-[#1877F2]'>
+          <SimpleIconsFacebook className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
+         </div>
+         <div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#4FCE5D]'>
+          <SimpleIconsWhatsapp className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
+         </div>
+         <div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#1877F2]'>
+          <SimpleIconsLinkedin className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
+         </div>
+         <div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#212121]'>
+          <SimpleIconsX className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
+         </div>
         </div>
         
        </div>

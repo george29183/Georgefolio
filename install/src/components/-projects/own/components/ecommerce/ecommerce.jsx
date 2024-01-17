@@ -18,7 +18,7 @@ export default function Ecommerce(){
     
     <section>
         <OwnNavbar path='E-commerce'/>
-        <Nav2/>
+        <Nav2 paths="home"/>
         <EcomHero/>
         <EcomSubHero/>
         <EcomProduct/>

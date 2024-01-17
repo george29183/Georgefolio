@@ -15,7 +15,7 @@ export default function Navbar(){
   
   return (
     <nav onMouseLeave={()=>{setOver(false)}} className='select-none  sticky top-0 z-[100] items-center text-slate-900 flex justify-between pr-4 navv h-16 '>
-     <Link to='/' ><div className='flex selection:bg-none relative items-center'>
+     <Link to='/' ><div className='flex  selection:bg-none relative items-center'>
         <img
       onClick={()=>{setPath('home')}}
     alt='logo'

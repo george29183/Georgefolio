@@ -12,7 +12,7 @@ import Rectangle from './components/subHero/Rectangle'
 import MaterialSymbolsAddShoppingCartSharp from './components/product/MaterialSymbolsAddShoppingCartSharp'
 import { Link } from 'react-router-dom'
 export default function Producty(){
-    const {all_Products,setCartItem,addCart,cart,quantity,showPopup,showPopups,addItem,wishlists,addToWishlist,removeFromWishlist} = useContext(Ecomcontext)
+    const {all_Products,setCartItem,addToCart,cart,quantity,showPopup,showPopups,addItem,wishlists,addToWishlist,removeFromWishlist} = useContext(Ecomcontext)
     const [count,setCount] = useState(1)
   const {productId} = useParams()
   const product = all_Products[productId-1]
@@ -20,9 +20,9 @@ export default function Producty(){
   const fourProducts = all_Products.map((item,i)=>{
       
     return product.category===item.category && product.id!==item.id?(
-    <div className={` w-[75%] sm:w-[90%] mx-auto h-full  shadow-md`} key={i}>
+    <div className={` w-[75%] hover:scale-105 transition hover:shadow-lg  sm:w-[90%] mx-auto h-full  shadow-md`} key={i}>
         <div className='w-full h-[71%] relative  cursor-pointer'>
-          <Link to={`/project/OWN/E-commerce/product/${item.id}`}><img className='h-full w-full' src={item.images[0]} alt="" /></Link>
+          <Link  onClick={()=>window.scrollTo(0,0)} to={`/project/OWN/E-commerce/product/${item.id}`}><img className='h-full  max-h-[340px] min-h-[250px] w-full' src={item.images[0]} alt="" /></Link>
              <button onClick={()=>{wishlists.includes(item)?removeFromWishlist(item):addToWishlist(item)}} className='absolute rounded-[50%] top-2 p-1 right-2 shadow-md hover:shadow-lg flex hover:scale-105 transition justify-center  items-center bg-[#f5f5f5]'>
                 <Wishlist fill={wishlists.includes(item)?"#db4444":"none"}
                 stroke={wishlists.includes(item)?"none":"black"}/>
@@ -32,7 +32,7 @@ export default function Producty(){
                   <MaterialSymbolsAddShoppingCartSharp/>
                 </button> 
         </div>
-        <Link to={`/project/OWN/E-commerce/product/${item.id}`}><div  className='p-1 flex flex-col gap-[2px]'>
+        <Link  onClick={()=>window.scrollTo(0,0)} to={`/project/OWN/E-commerce/product/${item.id}`}><div  className='p-1 flex flex-col gap-[2px]'>
            <div >
             <h1 className='text-lg font-semibold'>{item.title}</h1>
            </div>
@@ -66,8 +66,8 @@ return (
               return i>0?<img className='w-40 h-40' key={i} src={item} alt="" />:null
             })}
           </div>
-          <div className=' col-span-3 row-span-4 justify-center items-center bg-[#fafafa]'>
-             <img  src={product.images[0]} alt="" />
+          <div className=' col-span-3 row-span-4 justify-center items-center flex bg-[#fafafa]'>
+             <img className='max-h-[520px]'  src={product.images[0]} alt="" />
           </div>
          
         </div>

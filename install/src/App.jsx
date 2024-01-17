@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from './components/navbar/navbar'
 import {Routes,Route, BrowserRouter} from 'react-router-dom'
 
@@ -7,17 +7,13 @@ import Clones from './components/-projects/clones/clones'
 import APIs from "./components/-projects/api's/apis"
 import Bored from './components/-projects/bored/bored'
 import Custom from './components/-projects/custom-web/custom'
-import Frontend from './components/-skills/frontend'
-import Backend from './components/-skills/backend'
-import UIUX from './components/-skills/uiux'
-import Firebase from './components/-skills/firebase'
-import Github from './components/-skills/github'
+
 import Contact from './pages/contact'
 import About from './pages/about'
 import Home from './pages/home'
 import Ecommerce from './components/-projects/own/components/ecommerce/ecommerce'
 import Blog from './components/-projects/own/components/blog/blog'
-import EcomContextProvider from './components/-projects/own/components/context/ecomContext'
+import  { Ecomcontext } from './components/-projects/own/components/context/ecomContext'
 
 import Product from './components/-projects/own/components/ecommerce/product'
 import Cart from './components/-projects/own/components/ecommerce/cart'
@@ -32,15 +28,17 @@ import SignUp from './components/-projects/own/components/ecommerce/components/s
 import Cart2 from './components/-projects/own/components/ecommerce/Cart2'
 import Checkout from './components/-projects/own/components/ecommerce/Checkout'
 import Product2 from './components/-projects/own/components/ecommerce/Product2'
+import Search from './components/-projects/own/components/ecommerce/components/Search'
+import Account from './components/-projects/own/components/ecommerce/Account'
 
 function App() {
-
+   const {sign} = useContext(Ecomcontext)
   return (
     <div >
-      <EcomContextProvider>
+      
     <BrowserRouter>
     <Navbar/>
-    <div className='max-w-[1550px] xl:mx-auto'>
+    <div className='max-w-[1600px] xl:mx-auto'>
     <Routes>
       <Route path='/' element={<Home/>}></Route> 
       <Route path='/about' element={<About/>}></Route>
@@ -57,9 +55,9 @@ function App() {
         <Route path='/project/OWN/E-commerce/cart' element={<Cart2/>}></Route>
         <Route path='/project/OWN/E-commerce/cart/checkout' element={<Checkout/>}></Route>
         <Route path='/project/OWN/E-commerce/about' element={< EcomAbout/>}></Route>
-        <Route path='/project/OWN/E-commerce/account/signup' element={<SignUp signUp={true}/>}></Route>
-        <Route path='/project/OWN/E-commerce/account/login' element={<SignUp signUp={false}/>}></Route>
+        <Route path='/project/OWN/E-commerce/account' element={sign?<Account/>:<SignUp/>}></Route>
         <Route path='/project/OWN/E-commerce/wishlist' element={<Wishlist/>}></Route>
+        <Route path='/project/OWN/E-commerce/search' element={<Search/>}></Route>
 
           <Route path='/project/OWN/Blog' element={<Blog/>}></Route>
           <Route path='/project/OWN/Landing-Page' element={<LandingPage/>}></Route>
@@ -70,18 +68,10 @@ function App() {
         <Route path='/project/when-bored' element={<Bored/>}></Route>
         <Route path='/project/custom' element={<Custom/>}></Route>
       </Route>
-      <Route path='/skills'>
-        <Route path='/skills/frontend' element={<Frontend/>}></Route>
-        <Route path='/skills/backend' element={<Backend/>}></Route>
-        <Route path='/skills/UIUX' element={<UIUX/>}></Route>
-        <Route path='/skills/github' element={<Github/>}></Route>
-        <Route path='/skills/firebase' element={<Firebase/>}></Route>
-      </Route>
       <Route path='/contact' element={<Contact/>}></Route>
     </Routes>
     </div>
     </BrowserRouter>
-    </EcomContextProvider>
     </div>
   )
 }

@@ -6,13 +6,33 @@ import MdiMinusThick from './components/assets/MdiMinusThick'
 import MaterialSymbolsAddRounded from './components/assets/MaterialSymbolsAddRounded'
 import MaterialSymbolsDeleteRounded from './components/assets/MaterialSymbolsDeleteRounded'
 import { Link } from 'react-router-dom'
-
+import {motion, AnimatePresence} from 'framer-motion'
 function Cart2() {
     const {cart,total,allTotal,deleteItem,shippingFee,addItem,completeDelete} = useContext(Ecomcontext)
 
+
     const cartView = cart.map((item,i)=>{
-      if(item.quantity>0){
-        return   <div key={i} className='flex py-2 shadow-md items-center'>
+     return ( 
+       <motion.div
+       initial={{
+          x:-100,
+          opacity:0
+        }}
+        animate={{
+          x:0,
+          opacity:1
+        }}
+        exit={{
+          x:100,
+          opacity:0,
+          transition: { duration: 0.5, ease: "easeInOut" }
+        }}
+        transition={{
+          duration:i/10,
+          ease:"easeInOut"
+        }}
+        
+        key={item.id} className='flex py-2 shadow-md hover:scale-[1.025] transition hover:shadow-lg cursor-pointer items-center'>
              <div className='flex items-center w-[25%] gap-1'>
                 <img className='h-[40px] w-[50px]' src={item.images[0]} alt="" />
                 <h1>{item.title}</h1>
@@ -27,11 +47,12 @@ function Cart2() {
              </div>
              <h1 className='ml-24 '>${total(item)}</h1>
              <div className=''><MaterialSymbolsDeleteRounded className="hover:scale-105 active:scale-95 transition-all cursor-pointer" onClick={()=>{completeDelete(item)}}/></div>
-        </div>
-    }})
+        </motion.div>)
+   
+    })
   return (
     <section >
-       <Nav2/>
+       <Nav2 paths="cart"/>
        <div className='flex px-2 select-none sm:px-12 lg:px-[135px] mb-32 flex-col mt-20 gap-20'>
           <h1 className='text-gray-400'>Home / <span className='text-[#212121] font-semibold ml-1'>Cart</span></h1>
           <div className='flex flex-col gap-20'>
@@ -44,7 +65,13 @@ function Cart2() {
                 </div>
                 <div className={`flex  ${cart.length===0?"flex-row items-center justify-center":"flex-col"} gap-10`}>
                     <hr className='w-[80%] mx-auto'/>
-                     {cart.length===0?<h1 className='text-2xl'>Your Item Will Be Shown Here!</h1>:cartView}
+                    
+                     {cart.length===0?<h1 className='text-2xl'>Your Item Will Be Shown Here!</h1>:
+                     <AnimatePresence>
+                     {cartView}
+                     </AnimatePresence>
+                     }
+                    
                      <hr className='w-[80%] mx-auto'/>
                 </div>
                 <div className='flex items-center justify-center'>
@@ -73,7 +100,7 @@ function Cart2() {
                        <h1>${allTotal()?allTotal()+shippingFee():"0"}</h1>
                     </div>
                     
-                    <Link className='w-[80%] mx-auto' to="/project/OWN/E-commerce/cart/checkout"><button className='py-4 px-12 bg-[#db4444] shadow-md hover:bg-opacity-95 mt-10 hover:shadow-lg w-full active:scale-95 transition-all text-[#fafafa]'>Procees to checkout</button></Link>
+                    <Link className='w-[80%] mx-auto' to="/project/OWN/E-commerce/cart/checkout"><button className='py-4 px-12 bg-[#db4444] shadow-md hover:bg-opacity-95 mt-10 hover:shadow-lg w-full active:scale-95 transition-all text-xl text-[#fafafa]'>Proceed to checkout</button></Link>
                 </div>
             </div>
           </div>

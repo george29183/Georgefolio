@@ -11,7 +11,7 @@ function Wishlist() {
   const {wishlists,removeFromWishlist,moveAllToBag,setWishlist,addToCart} = useContext(Ecomcontext)
   return (
     <section>
-      <Nav2/>
+      <Nav2 paths="wishlist"/>
       <div className='lg:px-[135px] gap-16 mt-20 px-12'>
         <div className='flex justify-between w-full items-center'>
           <h1 className='text-xl'>wishlist({wishlists.length})</h1>
