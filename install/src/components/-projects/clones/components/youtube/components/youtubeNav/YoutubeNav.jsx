@@ -13,7 +13,7 @@ function YoutubeNav(props) {
   const {setAside,aside} = useContext(Ecomcontext)
   const [search,setSearch] = useState(false)
   return (
-    <div className='w-full pb-4 flex z-[60] px-[18px] py-2 justify-between items-center sticky  top-16 bg-[#0F0F0F]'>
+    <div className='w-full pb-4 flex z-[60] px-[18px] py-2 justify-between items-center sticky  top-0 bg-[#0F0F0F]'>
       <button  className='flex  relative  items-center gap-2'>
         <SolarHamburgerMenuOutline onClick={()=>{setAside(!aside)}} className={`${window.innerWidth<699?"hidden":"block"} p-2 cursor-pointer rounded-[50%] transition hover:bg-[#262627]`}/>
         <LogosYoutube className="cursor-pointer"/>

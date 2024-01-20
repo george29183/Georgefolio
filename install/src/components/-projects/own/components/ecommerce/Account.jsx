@@ -9,7 +9,7 @@ function Account() {
   return (
     <section>
         <Nav2/>
-        <div className='mt-10 mb-32 px-2 lg:px-[135px] gap-10 flex flex-col sm:px-12'>
+        <div className='mt-10 mb-32 max-w-[1600px] xl:mx-auto px-2 lg:px-[135px] gap-10 flex flex-col sm:px-12'>
           <h1 className='text-gray-400 text-lg'>Home / <span className='text-[#212121] font-semibold'>Account</span></h1>
           <div className='flex gap-20'>
             <div>

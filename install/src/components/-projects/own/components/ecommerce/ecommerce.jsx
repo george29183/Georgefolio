@@ -13,12 +13,15 @@ import Services from './components/services3/Services'
 import Footer from './components/footer/Footer'
 
 export default function Ecommerce(){
- 
+  useEffect(() => {
+    document.title = 'GeorgeFi';
+  }, []);
+
   return (
     
     <section>
-        <OwnNavbar path='E-commerce'/>
         <Nav2 paths="home"/>
+        <div  className='max-w-[1600px] xl:mx-auto'>
         <EcomHero/>
         <EcomSubHero/>
         <EcomProduct/>
@@ -27,6 +30,7 @@ export default function Ecommerce(){
         <ProductPreview className="mt-16"/>
         <NewArrival className="mt-36"/>
         <Services className="mt-36 flex flex-col items-center gap-20 lg:flex-row lg:justify-center"/>
+        </div>
         <Footer className="mt-36"/>
         </section>
        

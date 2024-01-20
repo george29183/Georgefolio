@@ -1,22 +1,8 @@
 import React, { useContext } from 'react'
-import Navbar from './components/navbar/navbar'
 import {Routes,Route, BrowserRouter} from 'react-router-dom'
-
-import OWN from './components/-projects/own/own'
-import Clones from './components/-projects/clones/clones'
-import APIs from "./components/-projects/api's/apis"
-import Bored from './components/-projects/bored/bored'
-import Custom from './components/-projects/custom-web/custom'
-
-import Contact from './pages/contact'
-import About from './pages/about'
 import Home from './pages/home'
 import Ecommerce from './components/-projects/own/components/ecommerce/ecommerce'
-import Blog from './components/-projects/own/components/blog/blog'
 import  { Ecomcontext } from './components/-projects/own/components/context/ecomContext'
-
-import Product from './components/-projects/own/components/ecommerce/product'
-import Cart from './components/-projects/own/components/ecommerce/cart'
 import Producty from './components/-projects/own/components/ecommerce/producty'
 import OwnContact from './components/-projects/own/components/ecommerce/contact'
 import LandingPage from './components/-projects/own/components/Landing-Page/LandingPage'
@@ -37,13 +23,9 @@ function App() {
     <div >
       
     <BrowserRouter>
-    <Navbar/>
-    <div className='max-w-[1600px] xl:mx-auto'>
+    <div className=''>
     <Routes>
-      <Route path='/' element={<Home/>}></Route> 
-      <Route path='/about' element={<About/>}></Route>
-      <Route path='/project'>
-        <Route path='/project/OWN' element={<OWN/>}></Route>
+    <Route path='/' element={<Home/>}></Route>
         <Route path='/project/OWN/E-commerce' element={<Ecommerce/>}></Route>
         <Route path='/project/OWN/E-commerce/products' element={<Product2/>}>
         </Route>
@@ -58,17 +40,10 @@ function App() {
         <Route path='/project/OWN/E-commerce/account' element={sign?<Account/>:<SignUp/>}></Route>
         <Route path='/project/OWN/E-commerce/wishlist' element={<Wishlist/>}></Route>
         <Route path='/project/OWN/E-commerce/search' element={<Search/>}></Route>
-
-          <Route path='/project/OWN/Blog' element={<Blog/>}></Route>
           <Route path='/project/OWN/Landing-Page' element={<LandingPage/>}></Route>
-        <Route path='/project/clones' element={<Clones/>}></Route>
+       
         <Route path='/project/clones/Youtube' element={<Youtube/>}></Route>
-        <Route path="/project/API's" element={<APIs/>}></Route>
         <Route path="/project/API's/News" element={<NewsApi/>}></Route>
-        <Route path='/project/when-bored' element={<Bored/>}></Route>
-        <Route path='/project/custom' element={<Custom/>}></Route>
-      </Route>
-      <Route path='/contact' element={<Contact/>}></Route>
     </Routes>
     </div>
     </BrowserRouter>

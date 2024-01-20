@@ -22,7 +22,7 @@ function Nav2(props) {
     return window.removeEventListener("resize",()=>{setSize(window.innerWidth)})
   },[size])
   return (
-   <section className='sticky top-16 bg-[#f5f5f5] z-50 flex w-full px-2 xl:px-[135px] py-3 lg:px-[100px] justify-between items-center'>
+   <section className='sticky top-0 bg-[#f5f5f5] z-50 flex w-full px-2 xl:px-[135px] py-3 lg:px-[100px] justify-between items-center'>
     {size<640 && search?(
       <div className='w-full flex justify-center relative'>
         <button onClick={()=>{setSearch(false)}} className='absolute left-0 top-[25%] cursor-pointer'>
@@ -34,7 +34,7 @@ function Nav2(props) {
       </button></Link>
       </div>
     ):(
-      <div className='flex justify-between items-center  w-full'>
+      <div className='flex max-w-[1600px] xl:mx-auto justify-between items-center  w-full'>
       <div className=''>
       <Link to="/project/OWN/E-commerce"><h1 className='xl:text-5xl lg:text-4xl text-3xl font-[poppins]'>GeorgeFi</h1></Link>
     </div>

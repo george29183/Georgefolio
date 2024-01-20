@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState,useEffect } from 'react'
 import YoutubeNav from './components/youtubeNav/YoutubeNav'
 import ClonesNav from '../clonesNav/ClonesNav'
 import { Ecomcontext } from '../../../own/components/context/ecomContext'
@@ -26,12 +26,14 @@ function Youtube() {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
   
-    
+  useEffect(() => {
+    document.title = 'GeorgeTube';
+  }, []);
   
   return (
-    <section className={`bg-[#0f0f0f]`}>
-        <ClonesNav path="Youtube"/>
+    <section className={`bg-[#0f0f0f] h-screen`}>
         <YoutubeNav size={size[0]}/>
+        <div className='max-w-[1600px] xl:mx-auto'>
         <Category size={size[0]}/>
         <div className='flex relative '>
          <div className=''>
@@ -40,6 +42,7 @@ function Youtube() {
           <YoutubeMain/>
         </div>
         {size[0]<699?<PhoneNav/>:null}
+        </div>
     </section>
   )
 }

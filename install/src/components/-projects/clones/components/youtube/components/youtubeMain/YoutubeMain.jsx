@@ -19,7 +19,7 @@ function YoutubeMain() {
   }, []);
   console.log(window.innerHeight);
   return (
-    <div  onClick={()=>{window.innerWidth<1300?setAside(false):null}} className={`pt-16 text-xl  text-[#f0f0f0] w-[100%] xl:h-[80vh] grid lg:h-[75vh] h-[82vh] overflow-y-scroll ${size[0]>1424 && !aside?"grid-cols-4":size[0]>1100?"grid-cols-3":size[0]>700?" grid-cols-2":"grid-cols-1"} pb-20 gap-4 bg-[#0f0f0f] pl-2 pr-10`}>
+    <div style={{height:size[1]-100}} onClick={()=>{window.innerWidth<1300?setAside(false):null}} className={`pt-16 text-xl  text-[#f0f0f0] w-[100%]  grid overflow-y-scroll ${size[0]>1424 && !aside?"grid-cols-4":size[0]>1100?"grid-cols-3":size[0]>700?" grid-cols-2":"grid-cols-1"} pb-20 gap-4 bg-[#0f0f0f] pl-2 pr-10`}>
 
        {VideoData.map((item, i) => (
         <div className='m-5 w-[100%] group' key={item.id}>

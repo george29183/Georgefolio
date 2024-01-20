@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import LogosReact from '../../../components/assets/LogosReact'
 import LogosTailwindcssIcon from '../../../components/assets/LogosTailwindcssIcon'
-import youtube from "../assets/010753.png"
+
 
 function ClonesHero() {
     const projects = [
         {
           type:'Youtube',
-          img:youtube,
+          img:'',
           disc:"This project was quite a journey, covering everything from creating the homepage and navigation bar to figuring out how an e-commerce website should work. I have to admit, the design isn't top-notch, and there are some cool features missing (no excuses here – it's my first big project, done before I learned more awesome skills). I've added some cool stuff already, and I'm still waiting for some great ideas to add more. Even though the design isn't perfect, the website works really well.",
           technologyUsed:["LogosReact","LogosTailwindcssIcon"]
         },

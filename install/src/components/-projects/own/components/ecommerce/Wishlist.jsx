@@ -12,7 +12,7 @@ function Wishlist() {
   return (
     <section>
       <Nav2 paths="wishlist"/>
-      <div className='lg:px-[135px] gap-16 mt-20 px-12'>
+      <div className='lg:px-[135px] max-w-[1600px] xl:mx-auto gap-16 mt-20 px-12'>
         <div className='flex justify-between w-full items-center'>
           <h1 className='text-xl'>wishlist({wishlists.length})</h1>
           <button onClick={()=>{moveAllToBag();setWishlist([])}} className=' py-4 px-12  shadow-md hover:bg-opacity-95 hover:shadow-lg active:scale-95  justify-center items-center transition-all gap-3 text-[#212121]  border border-gray-800  mt-2'>Move All To Bag</button>
@@ -57,7 +57,7 @@ function Wishlist() {
         </div>
         <hr className='w-[80%] mx-auto mt-12'/>
       </div>
-      <div className='mt-12 mb-28 flex gap-20 flex-col lg:px-[135px] px-12'>
+      <div className='mt-12 max-w-[1600px] xl:mx-auto mb-28 flex gap-20 flex-col lg:px-[135px] px-12'>
       <div className='flex flex-col gap-5'>
       <div className='flex items-center gap-4 text-[#db4444] font-semibold'>
          <Rectangle/>

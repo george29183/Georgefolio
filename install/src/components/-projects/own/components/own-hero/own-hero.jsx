@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ecom from '../assets/newEcom.jpg'
-import blogy from '../assets/blog.jpg'
-import land from '../assets/land.jpg'
+
 import LogosReact from '../../../components/assets/LogosReact'
 import LogosTailwindcssIcon from '../../../components/assets/LogosTailwindcssIcon'
 import LogosFramer from '../../../components/assets/LogosFramer'
@@ -15,19 +13,19 @@ export default function OwnHero(){
   const projects = [
     {
       type:'E-commerce',
-      img:ecom,
+      img:'',
       disc:"This project was quite a journey, covering everything from creating the homepage and navigation bar to figuring out how an e-commerce website should work. I have to admit, the design isn't top-notch, and there are some cool features missing (no excuses here – it's my first big project, done before I learned more awesome skills). I've added some cool stuff already, and I'm still waiting for some great ideas to add more. Even though the design isn't perfect, the website works really well.",
       technologyUsed:["LogosReact","LogosTailwindcssIcon"]
     },
     {
       type:'Blog',
-      img:blogy,
+      img:'',
       disc:"Back when I first launched 'Bogeyman,' I was still honing my design skills, and I'll admit, the aesthetic might not be what some consider beautiful. While the design doesn't necessarily have that eye-catching appeal, I want to assure you that there's more to the blog than meets the eye. Despite its visual simplicity, the functionality is robust and geared towards providing an excellent reading experience for my audience. I've learned a lot since then and look forward to enhancing both the visual appeal and functionality of 'Bogeyman' in the future. ",
       technologyUsed:["LogosReact","LogosTailwindcssIcon"]
     },
     {
       type:'Landing-Page',
-      img:land,
+      img:'',
       disc:'Similarly, I affectionately refer to it as my masterpiece, being the last of three projects I completed. I was simultaneously refining my animation skills while working on this endeavor. The concept of incorporating diamonds and creating the visuals were my own, although I constructed the landing page using a design template. This approach was intentional, serving as a demonstration of my proficiency in translating design templates (from Figma, PSD, XD) into a seamlessly responsive website.',
       technologyUsed:["LogosReact","LogosTailwindcssIcon","LogosFramer"]
     },

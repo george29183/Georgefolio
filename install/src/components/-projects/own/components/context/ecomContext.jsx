@@ -3,6 +3,7 @@ import all_Products from "../ecommerce/components/assets/allProduct";
 export const Ecomcontext = createContext(null)
 
 const EcomContextProvider = (props)=>{
+  const [menu,setmenu] = useState(true)
     const [cartItem,setCartItem] = useState(0)
     const [cart,addCart] = useState([])
     const [wishlists,setWishlist] = useState([])
@@ -98,7 +99,7 @@ const EcomContextProvider = (props)=>{
                     }else{ quantity(item) }
      }
 
-    const contextValue = {cartItem,all_Products,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside,addToWishlist,wishlists,removeFromWishlist,moveAllToBag,setWishlist,addToCart,searchItem,setSearchItem,sign,setSign,loginData,setLoginData}
+    const contextValue = {cartItem,all_Products,setCartItem,addCart,cart,quantity,total,allTotal,deleteItem,shippingFee,addItem,showPopup,showPopups,completeDelete,aside,setAside,addToWishlist,wishlists,removeFromWishlist,moveAllToBag,setWishlist,addToCart,searchItem,setSearchItem,sign,setSign,loginData,setLoginData,menu,setmenu}
     return(
         <Ecomcontext.Provider value={contextValue}>
             {props.children}

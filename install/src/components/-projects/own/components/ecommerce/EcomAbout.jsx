@@ -7,7 +7,7 @@ function EcomAbout() {
   return (
     <section>
       <Nav2 paths="about"/>
-      <div className='mt-10 mb-32 px-2 lg:px-[135px] flex gap-72 sm:gap-[450px] lg:gap-12 flex-col '>
+      <div className='mt-10 mb-32 px-2 lg:px-[135px] flex gap-72 sm:gap-[450px] max-w-[1600px] xl:mx-auto lg:gap-12 flex-col '>
         <h1 className='text-gray-500'>Home / <span className='text-[#212121] font-semibold'>About</span></h1>
         <div className=' flex justify-between gap-12 items-center flex-col lg:flex-row h-[500px]'>
             <div className='flex self-center flex-col lg:w-[40%] w-[80%]  lg:gap-2 '>

@@ -46,7 +46,7 @@ const tick = ()=>{
 }
 
   return (
-    <header className='gap-1 bg-[#f5f5f5]  h-full sm:flex '>
+    <header className='gap-1 bg-[#fafafa] mt-8 lg:mt-0  h-full sm:flex '>
        <div className='basis-1/2 flex flex-col mb-5 justify-center gap-5 z-10 mx-2'>
         <h1 className={` mx-auto  font-bold text-center  xl:text-6xl lg:text-5xl text-3xl`}>GEORGE a <span className={` ${beat?'border-r':'border-transparent'} p-0 text-stone-700 border-r-slate-400`}>{text}</span></h1>
         <p className='lg:text-xl xl:text-2xl text-center '>

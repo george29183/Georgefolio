@@ -40,7 +40,7 @@ function YoutubeSmallScreenAside() {
     transition={{
         duration:0.1,
         ease:"easeInOut"
-    }} style={{height:`${window.innerHeight}px`}}  className={`left-0  flex gap-1 flex-col  text-xs items-center group text-slate-50  bg-[#0F0F0F]  z-[100]  fixed lg:top-28 top-16 px-2  w-64 `}>
+    }} style={{height:`${window.innerHeight}px`}}  className={`left-0  flex gap-1 flex-col  text-xs items-center group text-slate-50  bg-[#0F0F0F]  z-[100]  fixed  top-0 px-2  w-64 `}>
          <button onClick={()=>{setAside(!aside)}} className='flex text-lg bg-[#0f0f0f] px-6 py-3 relative w-full mr-2 items-center gap-2'>
         <SolarHamburgerMenuOutline className=" p-2 cursor-pointer  rounded-[50%] transition hover:bg-[#262627]"/>
         <LogosYoutube className="cursor-pointer"/>

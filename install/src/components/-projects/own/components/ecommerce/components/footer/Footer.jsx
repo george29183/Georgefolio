@@ -9,7 +9,7 @@ import IconTwitter from './IconTwitter'
 import IconLinkedin from './IconLinkedin'
 function Footer(props) {
   return (
-    <div className={`${props.className} hidden lg:flex bg-black w-full justify-between px-4 xl:px-28 lg:px-6 py-16`}>
+    <div className={`${props.className} hidden lg:flex bg-black w-full justify-between px-4 max-w-[1600px] xl:mx-auto xl:px-28 lg:px-6 py-16`}>
       <Div1 className="flex flex-col justify-between gap-3 items-start text-[#fafafa]"/>
       <Div2 className="flex flex-col justify-between gap-3 items-start text-[#fafafa]"/>
       <Div3 className="flex flex-col justify-between gap-3 items-start text-[#fafafa]"/>

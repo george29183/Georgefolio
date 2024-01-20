@@ -12,7 +12,7 @@ import Rectangle from './components/subHero/Rectangle'
 import MaterialSymbolsAddShoppingCartSharp from './components/product/MaterialSymbolsAddShoppingCartSharp'
 import { Link } from 'react-router-dom'
 export default function Producty(){
-    const {all_Products,setCartItem,addToCart,cart,quantity,showPopup,showPopups,addItem,wishlists,addToWishlist,removeFromWishlist} = useContext(Ecomcontext)
+    const {all_Products,setCartItem,addToCart,cart,quantity,showPopup,showPopups,addItem,addCart,wishlists,addToWishlist,removeFromWishlist} = useContext(Ecomcontext)
     const [count,setCount] = useState(1)
   const {productId} = useParams()
   const product = all_Products[productId-1]
@@ -57,7 +57,7 @@ export default function Producty(){
 return (
    <section>
     <Nav2/>
-    <div className='mt-10 mb-32 px-2 lg:px-[135px] flex flex-col select-none gap-10'>
+    <div className='mt-10 mb-32 px-2 lg:px-[135px] flex flex-col max-w-[1600px] xl:mx-auto select-none gap-10'>
       <h1 className='text-gray-400'>Home / Products / <span className='text-[#212121] font-semibold ml-1'>{product.title}</span></h1>
        <div className='flex lg:flex-row flex-col-reverse gap-20'>
         <div className='grid w-[90%] lg:w-[65%] mx-auto lg:mx-0 grid-cols-4'>

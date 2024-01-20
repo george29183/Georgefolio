@@ -25,7 +25,7 @@ function Checkout() {
   return (
     <section>
         <Nav2/>
-        <div className=' select-none flex px-12 lg:px-[135px] mb-32 mt-10 gap-10 flex-col'>
+        <div className='max-w-[1600px] xl:mx-auto select-none flex px-12 lg:px-[135px] mb-32 mt-10 gap-10 flex-col'>
             <h1 className='text-gray-500'>Home / Cart / <span className='text-[#212121] font-semibold ml-1'>Checkout</span></h1>
             <div className='flex justify-between lg:flex-row flex-col  items-center'>
                 <div className='lg:w-[50%] flex  items-start flex-col gap-8'>

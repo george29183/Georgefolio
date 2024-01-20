@@ -7,8 +7,8 @@ import {motion} from 'framer-motion'
 function LandingHero() {
   const [hover,setHover] = useState(false)
   return (
-    <div className={` bg-[#171c21] relative h-screen`}>
-       <img className={`rounded-sm p-2 h-screen w-full`} src={diamond} alt="" />
+    <div className={` bg-[#171c21] relative h-full`}>
+       <img className={`rounded-sm p-2 h-full w-full`} src={diamond} alt="" />
        <div className='w-full bottom-0 top-0 absolute  justify-center flex-col  flex'>
         <div className='bg-gradient-to-r text-transparent  from-slate-950 to-transparent absolute h-full w-full'></div>
 

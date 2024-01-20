@@ -31,7 +31,7 @@ function YoutubeBigAside() {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
   return (
-    <div className={`sticky  overflow-hidden hover:overflow-y-auto left-0 flex gap-1 flex-col  text-xs h-[80vh] items-center text-slate-50  bg-[#0F0F0F] py-2 px-2 w-64 top-32`}>
+    <div className={`sticky  overflow-hidden hover:overflow-y-auto left-0 flex gap-1 flex-col  text-xs h-[80vh] items-center text-slate-50  bg-[#0F0F0F] py-2 px-2 w-64 top-16`}>
         <button onClick={()=>{setIcon({
           icon:false,
           home:true

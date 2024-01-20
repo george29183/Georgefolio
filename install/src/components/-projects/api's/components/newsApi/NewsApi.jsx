@@ -85,10 +85,13 @@ function NewsApi() {
         
     }, 8000);
   }
+  useEffect(() => {
+    document.title = 'GeorgePost';
+  }, []);
   return (
     <div className="">
-         <div className='w-full bg-[#b8b8b8] px-2 flex py-3 gap-2 justify-between items-center'>
-         <h1 className='text-5xl w-[40%] font-bold post'>George post</h1>
+         <div className='w-full bg-[#b8b8b8] px-2 flex py-3 gap-2 justify-between max-w-[1600px] xl:mx-auto items-center'>
+         <h1 className='text-5xl w-[40%] font-bold post'>Georgepost</h1>
          <div className='w-[40%] flex gap-2 '>
            <input
         className='w-full px-2 py-2 shadow-lg '
@@ -101,7 +104,7 @@ function NewsApi() {
          </div>
          <WeatherApp className="basis-1/3 flex flex-col h-full justify-center w-[20%] items-center"/>
       </div>
-      <div className='lg:w-[60%] bg-[#f0f0f0] lg:mx-auto'>
+      <div className='lg:w-[60%] max-w-[1600px] xl:mx-auto bg-[#f0f0f0] lg:mx-auto'>
         <div className='flex  w-full items-start'>
           <div className='flex basis-1/3 justify-self-start justify-center items-center flex-col p-5'>
           <motion.nav initial={false} animate={isOpen ? "open" : "closed"} className="flex justify-center flex-col items-center">

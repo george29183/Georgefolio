@@ -42,12 +42,12 @@ function SignUp() {
   createUserWithEmailAndPassword(auth,credentials.email,credentials.password)
   .then((res)=>{
     setLoginData([res])
-    setInterval(() => {
+  const me =  setInterval(() => {
       setLoading(false)
       setSign(true)
       navigate('/project/OWN/E-commerce');
     },6000);
-    
+    clearInterval(me)
   })
   .catch((err)=>{
     setInterval(() => {
@@ -62,11 +62,12 @@ const handleLogIn = (e)=>{
    signInWithEmailAndPassword(auth,credentials.email,credentials.password)
    .then((res)=>{
     setLoginData([res])
-    setInterval(() => {
+ const me =   setInterval(() => {
       setLoading(false)
       setSign(true)
       navigate('/project/OWN/E-commerce');
     },6000);
+    clearInterval(me)
   })
   .catch((err)=>{
     setInterval(() => {
@@ -89,7 +90,7 @@ const googleSignUp = ()=>{
   return (
     <section className='relative'>
       <Nav2/>
-      <div className='flex gap-20 mt-16 mb-32'>
+      <div className='flex max-w-[1600px] xl:mx-auto gap-20 mt-16 mb-32'>
          <img className='hidden h-auto w-[50%] xl:block' src={account} alt="a cart image"/>
          {
           !signUp?(

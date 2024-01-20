@@ -76,11 +76,11 @@ function Product2() {
        <div className='w-full mb-32 px-12 lg:px-[135px] flex justify-center items-center'>
         <h1 className='mt-10 text-5xl'>All Products</h1>
        </div>
-       <div className={`grid grid-cols-1 flex-col sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 select-none w-full px-12 lg:px-[135px]   lg:gap-4 gap-2`}>
+       <div className={`grid grid-cols-1 flex-col sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 select-none w-full px-12 lg:px-[135px] max-w-[1600px] xl:mx-auto  lg:gap-4 gap-2`}>
          {loading?all_Products.map((item,i)=>{
       
       return i>=page && i<next?(
-          <div className=' animate-pulse mb-10 gap-4 flex h-[340px] w-full'>
+          <div key={i} className=' animate-pulse mb-10 gap-4 flex h-[340px] w-full'>
           <div className="flex flex-col gap-2 w-full">
             <div className='bg-gray-300 h-60  mb-2'></div>
             <div className='bg-gray-300 h-5 w-[60%]'></div>

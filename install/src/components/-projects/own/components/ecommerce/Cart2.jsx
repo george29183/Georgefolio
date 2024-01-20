@@ -53,7 +53,7 @@ function Cart2() {
   return (
     <section >
        <Nav2 paths="cart"/>
-       <div className='flex px-2 select-none sm:px-12 lg:px-[135px] mb-32 flex-col mt-20 gap-20'>
+       <div className='flex px-2 select-none sm:px-12 lg:px-[135px] mb-32 flex-col max-w-[1600px] xl:mx-auto mt-20 gap-20'>
           <h1 className='text-gray-400'>Home / <span className='text-[#212121] font-semibold ml-1'>Cart</span></h1>
           <div className='flex flex-col gap-20'>
             <div className='flex flex-col gap-10'>
