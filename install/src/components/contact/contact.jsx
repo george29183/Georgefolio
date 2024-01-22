@@ -20,7 +20,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://georgefolio-6a500.web.app/send-email', {
+      const response = await fetch('http://localhost:3005/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
