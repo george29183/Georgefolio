@@ -3,9 +3,7 @@ import Nav2 from '../../../own-navbar/nav2'
 import Footer from '../footer/Footer'
 import account from './dl-beatsnoop-1.png'
 import IconGoogle from './IconGoogle'
-import { Link } from 'react-router-dom'
-import {db} from '../../../../../../../../firebaseConfig.js'
-import { addDoc, collection } from "firebase/firestore"; 
+import {app} from '../../../../../../../../firebaseConfig.js'
 import {
  GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -30,24 +28,20 @@ function SignUp() {
  const {sign,setSign,setLoginData} = useContext(Ecomcontext)
  const [loading,setLoading] = useState(false)
  const [signUp,setSignUp] = useState(false)
- const [logIn,setLogIn] = useState(false)
  const [creds,setCreds] = useState(true)
  const navigate = useNavigate();
  let auth = getAuth()
  let googleProvider = new GoogleAuthProvider
 
- const handleSubmit = (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault();
   setLoading(true)  
-  createUserWithEmailAndPassword(auth,credentials.email,credentials.password)
+  await createUserWithEmailAndPassword(auth,credentials.email,credentials.password)
   .then((res)=>{
     setLoginData([res])
-  const me =  setInterval(() => {
-      setLoading(false)
+    setLoading(false)
       setSign(true)
       navigate('/project/OWN/E-commerce');
-    },6000);
-    clearInterval(me)
   })
   .catch((err)=>{
     setInterval(() => {

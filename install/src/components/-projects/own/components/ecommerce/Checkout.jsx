@@ -66,7 +66,7 @@ function Checkout() {
                         <label htmlFor="Save this information for faster check-out next time">Save this information for faster check-out next time</label>
                     </div>
                 </div>
-                <div className=' pt-20 w-[90%] lg:w-[35%] sm:w-[60%] flex flex-col gap-8'>
+                <div className=' pt-20 w-[100%] lg:w-[35%] sm:w-[60%] flex flex-col gap-8'>
                   <div className='flex flex-col gap-3'>
                      {lastView}
 									</div>
@@ -104,7 +104,7 @@ function Checkout() {
 									</div>
 									<div className='flex justify-between'> 
 									<input className='py-4 px-4 border border-[#f0f0f0] w-[50%] bg-[#fafafa]' placeholder='Coupon Code' type="text" />
-                    <button className='py-4 px-12  shadow-md border-2 border-[#212121] hover:bg-opacity-95 hover:shadow-lg active:scale-95 transition-all text-[#0f0f0f]'>Apply Coupon</button>
+                    <button className='py-4 sm:px-10 px-2  shadow-md border-2 border-[#212121] hover:bg-opacity-95 hover:shadow-lg active:scale-95 transition-all text-[#0f0f0f]'>Apply Coupon</button>
 									</div>
 									<button className='py-4 px-12 bg-[#db4444] shadow-md hover:bg-opacity-95 hover:shadow-lg active:scale-95 transition-all text-[#fafafa]'>Place Order</button>
                 </div>

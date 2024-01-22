@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import img from '../assets/img.svg'
-import { Link } from 'react-router-dom'
-import SimpleIconsFacebook from '../assets/SimpleIconsFacebook'
+import LogosGithubIcon from '../skills/icons/LogosGithubIcon'
 import SimpleIconsWhatsapp from '../assets/SimpleIconsWhatsapp'
 import SimpleIconsLinkedin from '../assets/SimpleIconsLinkedin'
-import SimpleIconsX from '../assets/SimpleIconsX'
+import hero from '../assets/computer-dynamic-color.png'
+import { Link } from 'react-router-dom'
+
 
 export default function Hero(){
   const word = ['Friend','Teammate','Web Developer']
@@ -46,30 +46,30 @@ const tick = ()=>{
 }
 
   return (
-    <header className='gap-1 bg-[#fafafa] mt-8 lg:mt-0  h-full sm:flex '>
+    <header className='gap-1 bg-background pt-8 lg:mt-0  h-full sm:flex '>
        <div className='basis-1/2 flex flex-col mb-5 justify-center gap-5 z-10 mx-2'>
-        <h1 className={` mx-auto  font-bold text-center  xl:text-6xl lg:text-5xl text-3xl`}>GEORGE a <span className={` ${beat?'border-r':'border-transparent'} p-0 text-stone-700 border-r-slate-400`}>{text}</span></h1>
-        <p className='lg:text-xl xl:text-2xl text-center '>
-        Aiming to create a lasting experience for you, prioritizing privacy agreements and adhering to various statements in the contract. Fulfilling every need can be a challenge, but I'm dedicated to a professional and enduring experience that goes beyond meeting expectations.
-        </p>
+        <h1 className={` mx-auto  font-bold text-center text-textBlack xl:text-6xl lg:text-5xl text-3xl`}>GEORGE a <span className={` ${beat?'border-r':'border-transparent'} p-0  border-borderMove text-movingtext`}>{text}</span></h1>
+        <p className='lg:text-xl xl:text-2xl text-center text-textBlack'>
+         Searching for something? 
+          </p>
         <div className='self-center mt-3 flex xl:gap-6 gap-3'>
-         <div className='social px-5 rounded-2xl py-5 hover:scale-105 transition cursor-pointer hover:bg-[#1877F2]'>
-          <SimpleIconsFacebook className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
-         </div>
-         <div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#4FCE5D]'>
+         <Link to='https://wa.me/qr/P7UYMXQPI7VDG1'><div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#4FCE5D]'>
           <SimpleIconsWhatsapp className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
-         </div>
-         <div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#1877F2]'>
+         </div></Link>
+         <Link to="linkedin.com/in/mohammed-rabee-553416284"><div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#1877F2]'>
           <SimpleIconsLinkedin className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
-         </div>
-         <div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#212121]'>
-          <SimpleIconsX className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
-         </div>
+         </div></Link>
+         <Link to="https://github.com/george29183"><div className='social rounded-2xl px-5 py-5 hover:scale-105 transition cursor-pointer hover:bg-[#212121]'>
+          <LogosGithubIcon className=" lg:h-[1.7em] lg:w-[1.7em] h-[1em] w-[1em]"/>
+         </div></Link>
         </div>
         
        </div>
-       <div className=' justify-self-center basis-1/2 text-9xl'>
-        <img src={img} alt="" />
+       <div className='relative justify-self-center  basis-1/2 sm:text-lg grape-nuts-regular lg:text-3xl text-2xl'>
+        <img className='' src={hero} alt="" />
+         <div className='absolute top-[35%] -skew-x-12 left-[53%] text-textBlack -translate-x-[50%]'> 
+            Always Learning
+         </div>
        </div>
       
     </header>

@@ -15,15 +15,15 @@ function Wishlist() {
       <div className='lg:px-[135px] max-w-[1600px] xl:mx-auto gap-16 mt-20 px-12'>
         <div className='flex justify-between w-full items-center'>
           <h1 className='text-xl'>wishlist({wishlists.length})</h1>
-          <button onClick={()=>{moveAllToBag();setWishlist([])}} className=' py-4 px-12  shadow-md hover:bg-opacity-95 hover:shadow-lg active:scale-95  justify-center items-center transition-all gap-3 text-[#212121]  border border-gray-800  mt-2'>Move All To Bag</button>
+          <button onClick={()=>{moveAllToBag();setWishlist([])}} className=' py-4 lg:px-12 px-4 shadow-md hover:bg-opacity-95 hover:shadow-lg active:scale-95  justify-center items-center transition-all gap-3 text-[#212121]  border border-gray-800  mt-2'>Move All To Bag</button>
         </div>
         <hr className='w-[80%] mx-auto mt-12'/>
         <div className={` grid-cols-1  sm:grid-cols-2 mt-16 lg:grid-cols-3 ${wishlists.length<=0?"flex justify-center items-center":"grid"} xl:grid-cols-4 select-none w-full   lg:gap-4 gap-2`}>
           {wishlists.length>0?wishlists.map((item,i)=>{
             return (
               <div className={`"lg:w-full w-[75%] sm:w-[90%] mx-auto h-full group  shadow-md`} key={i}>
-            <div className='w-full h-[71%] relative cursor-pointer'>
-              <Link to={`/project/OWN/E-commerce/product/${item.id}`}><img className='h-full w-full' src={item.images[0]} alt="" /></Link>
+            <div className='w-full h-[70%] relative cursor-pointer'>
+              <Link to={`/project/OWN/E-commerce/product/${item.id}`}><img className='h-full max-h-[340px] min-h-[250px] w-full' src={item.images[0]} alt="" /></Link>
                  <button onClick={()=>{removeFromWishlist(item)}} className='absolute rounded-[50%] top-2 p-1 right-2 shadow-md hover:shadow-lg flex hover:scale-105 transition justify-center items-center bg-[#f5f5f5]'>
                       <IconDelete/>
                     </button> 

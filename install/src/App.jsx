@@ -5,7 +5,6 @@ import Ecommerce from './components/-projects/own/components/ecommerce/ecommerce
 import  { Ecomcontext } from './components/-projects/own/components/context/ecomContext'
 import Producty from './components/-projects/own/components/ecommerce/producty'
 import OwnContact from './components/-projects/own/components/ecommerce/contact'
-import LandingPage from './components/-projects/own/components/Landing-Page/LandingPage'
 import Youtube from './components/-projects/clones/components/youtube/Youtube'
 import  EcomAbout from './components/-projects/own/components/ecommerce/EcomAbout'
 import NewsApi from './components/-projects/api\'s/components/newsApi/NewsApi'
@@ -18,12 +17,12 @@ import Search from './components/-projects/own/components/ecommerce/components/S
 import Account from './components/-projects/own/components/ecommerce/Account'
 
 function App() {
-   const {sign} = useContext(Ecomcontext)
+   const {sign,theme} = useContext(Ecomcontext)
   return (
     <div >
       
     <BrowserRouter>
-    <div className=''>
+    <div className={theme}>
     <Routes>
     <Route path='/' element={<Home/>}></Route>
         <Route path='/project/OWN/E-commerce' element={<Ecommerce/>}></Route>
@@ -40,8 +39,6 @@ function App() {
         <Route path='/project/OWN/E-commerce/account' element={sign?<Account/>:<SignUp/>}></Route>
         <Route path='/project/OWN/E-commerce/wishlist' element={<Wishlist/>}></Route>
         <Route path='/project/OWN/E-commerce/search' element={<Search/>}></Route>
-          <Route path='/project/OWN/Landing-Page' element={<LandingPage/>}></Route>
-       
         <Route path='/project/clones/Youtube' element={<Youtube/>}></Route>
         <Route path="/project/API's/News" element={<NewsApi/>}></Route>
     </Routes>

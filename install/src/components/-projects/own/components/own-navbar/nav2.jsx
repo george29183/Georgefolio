@@ -3,7 +3,7 @@ import Wishlist from './assets/wishlist'
 import Cart from './assets/cart'
 import Component from './assets/Component'
 import IconsArrowLeft from './assets/IconsArrowLeft'
-import RiMenu2Fill from '../Landing-Page/components/assets/RiMenu2Fill'
+import RiMenu2Fill from './assets/RiMenu2Fill'
 import { Link } from 'react-router-dom'
 import { Ecomcontext } from '../context/ecomContext'
 import User from './assets/TdesignUser1'
@@ -28,7 +28,7 @@ function Nav2(props) {
         <button onClick={()=>{setSearch(false)}} className='absolute left-0 top-[25%] cursor-pointer'>
           <IconsArrowLeft/>
         </button>
-      <input  onChange={search?(e)=>{setSearchItem(e.target.value)}:setSearchItem('')} className='px-2 py-2  bg-[#ebebeb] w-[60%]' type="text" placeholder='what are you looking for'/>
+      <input  onChange={search?(e)=>{setSearchItem(e.target.value.toLowerCase())}:setSearchItem('')} className='px-2 py-2  bg-[#ebebeb] w-[60%]' type="text" placeholder='what are you looking for'/>
       <Link className='flex justify-center items-center ' to={search?"/project/OWN/E-commerce/search":null}><button className='bg-[#dfdddd] px-2 py-2'>
        <Component/>
       </button></Link>
@@ -122,8 +122,8 @@ function Nav2(props) {
     </div>
     <div className='flex gap-5 items-center'>
       <div className='flex'>
-         <input onChange={(e)=>{setSearchItem(e.target.value)}} className='px-2 py-2 hidden sm:block bg-[#ebebeb]' type="text" placeholder='what are you looking for'/>
-     <Link className='flex items-center' to={size>640?"/project/OWN/E-commerce/search":null}><button onClick={()=>{size<640?setSearch(!search):setSearch(false);console.log(searchItem);}} className='sm:bg-[#dfdddd] sm:px-2 sm:py-2'>
+         <input onChange={(e)=>{setSearchItem(e.target.value.toLowerCase())}} className='px-2 py-2 hidden sm:block bg-[#ebebeb]' type="text" placeholder='what are you looking for'/>
+     <Link className='flex items-center' to={size>640?"/project/OWN/E-commerce/search":null}><button onClick={()=>{size<640?setSearch(!search):setSearch(false)}} className='sm:bg-[#dfdddd] sm:px-2 sm:py-2'>
       <Component/>
      </button></Link>
       </div>

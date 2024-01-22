@@ -15,9 +15,9 @@ function EcomAbout() {
               <p className='text-lg'>"Welcome to GeorgeFi! We go beyond being a marketplace; we're a hub where passion and purpose converge. Our mission at GeorgeFi is to offer a seamless online shopping experience. Discover the latest fashion, cutting-edge tech, and everyday essentials with us. Our curated selection, commitment to quality, and customer satisfaction set us apart. Explore convenience and style on our user-friendly platform."</p>
               <p className='text-lg'>"Join us on this digital journey, where shopping transforms into an experience. Every click brings you closer to what you love. Thank you for choosing GeorgeFi, where your satisfaction is our top priority."</p>
             </div>
-            <img className='lg:w-[55%] shadow-lg mt-24 ' src={aboutImg} alt="" />
+            <img className='lg:w-[55%] shadow-lg sm:mt-24 ' src={aboutImg} alt="" />
         </div>
-        <div className='flex justify-center items-center  mt-32'>
+        <div className='flex justify-center items-center  mt-32 '>
           <Frame891/>
         </div>
       </div>

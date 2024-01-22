@@ -3,15 +3,95 @@
 @tailwind utilities;
 
 
+
 @layer base {
   @import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Sevillana&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+  .grape-nuts-regular {
+    font-family: "Grape Nuts", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
 
   *{
     @apply p-0 m-0;
     -webkit-tap-highlight-color: transparent;
     scroll-behavior:"smooth";
   }
+  .light{
+    --navbg:20, 33, 61;
+    --background:#e5e5e5;
+    --secBackground:#14213d;
+    --cards:#fca311;
+    --cardsFrom:#e5e5e5;
+    --cardsText:#ffffff;
+    --cardsText2:#14213d;
+    --textBlack:#212121;
+    --movingtext:#14213d;
+    --borderMove:rgb(148, 163, 184)
+  }
+  .dark{
+    --navbg:95, 82, 160;
+    --background:#ffffff;
+    --secBackground:#5f52a0;
+    --cards:#88869e;
+    --cardsFrom:#ffffff;
+    --cardsText:#ffffff;
+    --cardsText2:#000000;
+    --textBlack:#000000;
+    --movingtext:#88869e;
+    --borderMove:rgb(0, 0, 0)
+  }
+  .brown{
+    --navbg:57, 61, 36;
+    --background:#faf7ef;
+    --secBackground:#393d24;
+    --cards:#eee9f2;
+    --cardsFrom:#faf7ef;
+    --cardsText:#ffffff;
+    --cardsText2:#393d24;
+    --textBlack:#000000;
+    --movingtext:#393d24;
+    --borderMove:rgb(0, 0, 0)
+  }
+  .blue{
+    --navbg:255, 151, 112;
+    --background:#ff70a6;
+    --secBackground:#ff9770;
+    --cards:#ffd670;
+    --cardsFrom:#ffffff;
+    --cardsText:#f5f5f5;
+    --cardsText2:#ffffff;
+    --textBlack:#f5f5f5;
+    --movingtext:#ffd670;
+    --borderMove:#ff9770;
+  }
+  .classic{
+    --navbg:132, 117, 119;
+    --background:#e5e6e4;
+    --secBackground:#a6a2a2;
+    --cards:#847577;
+    --cardsFrom:#fbfbf2;
+    --cardsText:#fbfbf2;
+    --cardsText2:#fbfbf2;
+    --textBlack:#847577;
+    --movingtext:#a6a2a2;
+    --borderMove:#847577;
+  }
+  .theDark{
+    --navbg:13, 27, 42;
+    --background:#1b263b;
+    --secBackground:#0d1b2a;
+    --cards:#0d1b2a;
+    --cardsFrom:#415a77;
+    --cardsText:#fbfbf2;
+    --cardsText2:#fbfbf2;
+    --textBlack:#e0e1dd;
+    --movingtext:#0d1b2a;
+    --borderMove:#e0e1dd;
+  }
+  
   
   ::-webkit-scrollbar {
     width: 6px;
@@ -34,7 +114,6 @@
     }
   }
   .navv{
-    background: rgba(1, 89, 133,0.90);
 -webkit-backdrop-filter: blur(17px);
 backdrop-filter: blur(17px);
 border: 1px solid rgba(255,255,255,0.125);
@@ -64,7 +143,7 @@ border: 1px solid rgba(255,255,255,0.125);
   position: relative;
 }
 .social{
- box-shadow: inset 16px 16px 32px #075985, inset -16px -16px 32px #075985;
+ box-shadow: inset 16px 16px 32px #f5f5f5, inset -16px -16px 32px #f5f5f5;
 }
 .loader:before {
   content: '';
